@@ -11,24 +11,40 @@
       <div class="main-wrapper">
         <header class="header">
           <a href="index.html"><h1 class="logo">device</h1></a>
-          <form class="search-form">
-            <input type="input" placeholder="Поиск по сайту">
-            <button type="button">Найти</button>
-          </form>
-          <ul class="user-items">
-            <li>
-              <a href="#">Войти</a>
-            </li>
-            <li>
-              <a href="#">Сравнить</a>
-            </li>
-            <li>
-              <a href="#">Корзина</a>
-            </li>
-          </ul>
-          <nav class="menu">
+          <nav class="user-nav">
+            <form class="search-form">
+              <input type="text" placeholder="Поиск по сайту">
+              <button type="button">Найти</button>
+            </form>
+            <ul class="user-items">
+              <li>
+                <a href="#">Войти</a>
+              </li>
+              <li>
+                <a href="#">Сравнить</a>
+              </li>
+              <li>
+                <a href="#">Корзина</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="main-nav">
             <a href="catalog.html">Каталог товаров</a>
-            <ul class="menu__items">
+            <div class="main-nav__submenu">
+              <ul>
+                <li>Виртуальная реальность</li>
+                <li>Моноподы для селфи</li>
+                <li>Экшн-камеры</li>
+              </ul>
+              <ul>
+                <li>Фитнес-браслеты</li>
+                <li>Умные часы</li>
+              </ul>
+              <ul>
+                <li>Квадрокоптеры</li>
+              </ul>
+            </div>
+            <ul class="main-nav__items">
               <li><a href="#">Доставка</a></li>
               <li><a href="#">Гарантия</a></li>
               <li><a href="#">Контакты</a></li>
@@ -54,39 +70,52 @@
           </section>
           <section class="popular">
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Виртуальная реальность</span>
             </div>
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Моноподы для селфи</span>
             </div>
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Экшн-камеры</span>
             </div>
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Фитнесс браслеты</span>
             </div>
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Умные часы</span>
             </div>
             <div class="popular__item">
-              <img src="http://placehold.it/160x160">
+              <img src="http://placehold.it/160x160" alt="popular-product">
               <span>Квадрокоптеры</span>
             </div>
           </section>
           <div class="wrapper-services">
             <section class="services">
-              <ul class="services-list">
-                <li>Доставка</li>
-                <li>Гарантия</li>
-                <li>Кредит</li>
-              </ul>
-              <h3 class="service__title">Доставка</h3>
-              <p class="service__description"></p>
+              <div class="services-list">
+                <input type="radio" name="services" id="services1">
+                <label for="services1">Доставка</label>
+                <input type="radio" name="services" id="services2">
+                <label for="services2">Гарантия</label>
+                <input type="radio" name="services" id="services3">
+                <label for="services3">Кредит</label>
+              </div>
+              <div class="services__content1">
+                <h3 class="services__title">Доставка</h3>
+                <p class="services__description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+              </div>
+              <div class="services__content2">
+                <h3 class="services__title">Гарантия</h3>
+                <p class="services__description">Если из-за возгорания купленного у нас товара у вас сгорит дом - не переживайте, мы выдадим вам новый. Товар, не дом конечно же.</p>
+              </div>
+              <div class="services__content3">
+                <h3 class="services__title">Кредит</h3>
+                <p class="services__description">Залезть в долговую яму стало еще проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
+              </div>
             </section>
           </div>
           <section class="brand">

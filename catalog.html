@@ -11,24 +11,40 @@
       <div class="main-wrapper">
         <header class="header">
           <a href="index.html"><h1 class="logo">device</h1></a>
-          <form class="search-form">
-            <input type="input" placeholder="Поиск по сайту">
-            <button type="button">Найти</button>
-          </form>
-          <ul class="user-items">
-            <li>
-              <a href="#">Войти</a>
-            </li>
-            <li>
-              <a href="#">Сравнить</a>
-            </li>
-            <li>
-              <a href="#">Корзина</a>
-            </li>
-          </ul>
-          <nav class="menu">
+          <nav class="user-nav">
+            <form class="search-form">
+              <input type="text" placeholder="Поиск по сайту">
+              <button type="button">Найти</button>
+            </form>
+            <ul class="user-items">
+              <li>
+                <a href="#">Войти</a>
+              </li>
+              <li>
+                <a href="#">Сравнить</a>
+              </li>
+              <li>
+                <a href="#">Корзина</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="main-nav">
             <a href="catalog.html">Каталог товаров</a>
-            <ul class="menu__items">
+            <div class="main-nav__submenu">
+              <ul>
+                <li>Виртуальная реальность</li>
+                <li>Моноподы для селфи</li>
+                <li>Экшн-камеры</li>
+              </ul>
+              <ul>
+                <li>Фитнес-браслеты</li>
+                <li>Умные часы</li>
+              </ul>
+              <ul>
+                <li>Квадрокоптеры</li>
+              </ul>
+            </div>
+            <ul class="main-nav__items">
               <li><a href="#">Доставка</a></li>
               <li><a href="#">Гарантия</a></li>
               <li><a href="#">Контакты</a></li>
@@ -53,7 +69,7 @@
             <form class="filters__form" action="filters.html" method="post">
               <div class="filters__field">
                 <p>Стоимость</p>
-                <fieldset class="price">
+                <div class="price">
                   <div class="price__controls">
                     <div class="price__scale">
                       <div class="price__bar" style="margin-left: 21%; width: 42%"></div>
@@ -61,11 +77,11 @@
                     <div class="price__toggle price__toggle--min"></div>
                     <div class="price__toggle price__toggle--max"></div>
                   </div>
-                </fieldset>
+                </div>
               </div>
               <div class="filters__field">
                 <p>Цвет</p>
-                <fieldset class="colors">
+                <div class="colors">
                     <label>
                       <input type="checkbox" name="black-color" value="black-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
@@ -91,11 +107,11 @@
                       <span class="indicator-checkbox"></span>
                       Розовый
                     </label>
-                  </fieldset>
+                  </div>
               </div>
               <div class="filters__field">
                 <p>Bluetooth</p>
-                <fieldset class="bluetooth">
+                <div class="bluetooth">
                     <label>
                       <input type="radio" name="yes" class="bluetooth__radio" value="yes">
                       <span class="indicator-radio"></span>
@@ -106,7 +122,7 @@
                       <span class="indicator-radio"></span>
                       Нет
                     </label>
-                  </fieldset>
+                  </div>
               </div>
               <button type="submit" class="btn">Показать</button>
             </form>
@@ -126,21 +142,29 @@
               <div style="width: 360px; height: 360px;"></div>
               <h3 class="product-card__title">Любительская селфи-палка</h3>
               <span class="product-card__price">500 руб</span>
+              <a href="#" class="btn">Добавить в корзину</a>
+              <button type="button">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <div style="width: 360px; height: 360px;"></div>
               <h3 class="product-card__title">Профессиональная селфи-палка</h3>
               <span class="product-card__price">1500 руб</span>
+              <a href="#" class="btn">Добавить в корзину</a>
+              <button type="button">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <div style="width: 360px; height: 360px;"></div>
               <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
               <span class="product-card__price">500 руб</span>
+              <a href="#" class="btn">Добавить в корзину</a>
+              <button type="button">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <div style="width: 360px; height: 360px;"></div>
               <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
               <span class="product-card__price">4900 руб</span>
+              <a href="#" class="btn">Добавить в корзину</a>
+              <button type="button">Добавить к сравнению</button>
             </article>
           </section>
           <ul class="page-control">
@@ -192,8 +216,9 @@
         </footer>
       </div>
     </div>
+    <script type="text/javascript">
+      [].forEach.call(document.querySelectorAll("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})
+    </script>
   </body>
-  <script type="text/javascript">
-    [].forEach.call(document.querySelectorAll("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})
-  </script>
+
 </html>
