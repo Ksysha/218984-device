@@ -32,4 +32,7 @@ body {
 .wrapper-features {
   background-color: #e5e5e5; }
 
+.main-nav__submenu {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
