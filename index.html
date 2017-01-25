@@ -10,26 +10,30 @@
     <div class="main-page">
       <div class="main-wrapper">
         <header class="header">
-          <a href="index.html"><h1 class="logo">device</h1></a>
+          <a href="index.html" class="logo"><span>device</span></a>
           <nav class="user-nav">
             <form class="search-form">
               <input type="text" placeholder="Поиск по сайту">
               <button type="button">Найти</button>
             </form>
-            <ul class="user-items">
-              <li>
+            <ul class="user-nav__items">
+              <li class="user-nav__sign-in">
                 <a href="#">Войти</a>
               </li>
-              <li>
+              <li class="user-nav__sign-out" style="display: none;">
+                <a href="#"><span class="user__name">Валентин Петухов</span></a>
+                <a href="#">Выйти</a>
+              </li>
+              <li class="user-nav__compare">
                 <a href="#">Сравнить</a>
               </li>
-              <li>
+              <li class="user-nav__backet">
                 <a href="#">Корзина</a>
               </li>
             </ul>
           </nav>
           <nav class="main-nav">
-            <a href="catalog.html">Каталог товаров</a>
+            <a class="main-nav__catalog" href="catalog.html">Каталог товаров</a>
             <div class="main-nav__submenu">
               <ul>
                 <li>Виртуальная реальность</li>
@@ -45,9 +49,9 @@
               </ul>
             </div>
             <ul class="main-nav__items">
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Гарантия</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li class="main-nav__delivery"><a href="#">Доставка</a></li>
+              <li class="main-nav__garanty"><a href="#">Гарантия</a></li>
+              <li class="main-nav__contacts"><a href="#">Контакты</a></li>
             </ul>
           </nav>
         </header>
@@ -57,44 +61,44 @@
           <input type="radio" class="slide-radio" name="slide" value="product-3" id="product-3">
           <section class="slider">
             <div class="slide">
-              <div class="slide_number">01</div>
-              <h2 class="slide__title">Делай селфи, как Бен Стиллер!</h2>
+              <span class="slide__number">01</span>
+              <h1 class="slide__title">Делай селфи, как Бен Стиллер!</h1>
               <p class="slide__description">Самая длинная палка доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
               <a href="#" class="btn">Подробнее</a>
               <div class="slide__properties">
                 <div>
-                  8,5 м<span>Длина палки</span>
+                  8,5 м <span>Длина палки</span>
                 </div>
                 <div>
-                  5 кг<span>Вес палки</span>
+                  5 кг <span>Вес палки</span>
                 </div>
                 <div>
-                  Карбон<span>Материал</span>
+                  Карбон <span>Материал</span>
                 </div>
               </div>
             </div>
-            <div class="slide">
-              <div class="slide_number">02</div>
-              <h2 class="slide__title">Худеем правильно!</h2>
+            <div class="slide" style="display: none;">
+              <span class="slide__number">02</span>
+              <h1 class="slide__title">Худеем правильно!</h1>
               <p class="slide__description">Мотивирующие фитнесс-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
               <a href="#" class="btn">Подробнее</a>
               <div class="slide__properties">
                 <div>
-                  48 часов<span>Без подзарядки</span>
+                  48 часов <span>Без подзарядки</span>
                 </div>
               </div>
             </div>
-            <div class="slide">
-              <div class="slide_number">03</div>
-              <h2 class="slide__title">Порхает как бабочка, жалит как пчела!</h2>
+            <div class="slide" style="display: none;">
+              <span class="slide__number">03</span>
+              <h1 class="slide__title">Порхает как бабочка, жалит как пчела!</h1>
               <p class="slide__description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
               <a href="#" class="btn">Подробнее</a>
               <div class="slide__properties">
                 <div>
-                  800 м<span>Дальность полета</span>
+                  800 м <span>Дальность полета</span>
                 </div>
                 <div>
-                  50 м<span>Радиус поражения</span>
+                  50 м <span>Радиус поражения</span>
                 </div>
               </div>
             </div>
@@ -107,41 +111,35 @@
 
           </section>
           <section class="popular">
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-1.png" alt="popular-product"> -->
                 <span>Виртуальная реальность</span>
-              </div>
             </a>
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-2.png" alt="popular-product"> -->
                 <span>Моноподы для селфи</span>
-              </div>
             </a>
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-3.png" alt="popular-product"> -->
                 <span>Экшн-камеры</span>
-              </div>
             </a>
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-4.png" alt="popular-product"> -->
                 <span>Фитнесс браслеты</span>
-              </div>
             </a>
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-5.png" alt="popular-product"> -->
                 <span>Умные часы</span>
-              </div>
             </a>
-            <a href="#">
-              <div class="popular__item">
-                <img src="http://placehold.it/160x160" alt="popular-product">
+            <a href="#" class="popular__item">
+              <div>Популярный товар</div>
+                <!-- <img src="img/popular-6.png" alt="popular-product"> -->
                 <span>Квадрокоптеры</span>
-              </div>
             </a>
           </section>
           <div class="wrapper-services">
@@ -169,10 +167,10 @@
             </section>
           </div>
           <section class="brand">
-            <a><img src="http://placehold.it/260x100" alt="dji"></a>
-            <a><img src="http://placehold.it/260x100" alt="SPGadgets"></a>
-            <a><img src="http://placehold.it/260x100" alt="GoPro"></a>
-            <a><img src="http://placehold.it/260x100" alt="VIVE"></a>
+            <a><img src="img/logo-1.jpg" alt="dji"></a>
+            <a><img src="img/logo-2.jpg" alt="SPGadgets"></a>
+            <a><img src="img/logo-3.jpg" alt="GoPro"></a>
+            <a><img src="img/logo-4.jpg" alt="VIVE"></a>
           </section>
           <section class="index-content">
             <div class="info">
@@ -189,7 +187,7 @@
             <div class="contacts">
               <h3>Контакты</h3>
               <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, сможете проверить работоспособность покупки. Всякое бывает.</p>
-              <a href="https://www.google.ru/maps"><img src="http://placehold.it/560x220" class="map" alt="Карта"></a>
+              <a href="https://www.google.ru/maps"><img src="img/map.jpg" width="560" height="220" class="map" alt="Карта"></a>
               <a href="#">Напишите нам</a>
             </div>
           </section>
@@ -243,9 +241,9 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       [].forEach.call(document.querySelectorAll("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})
-    </script>
+    </script> -->
   </body>
 
 </html>

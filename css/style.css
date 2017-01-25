@@ -1,8 +1,34 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url("../fonts/web/gilroylight.woff") format("woff"), url("../fonts/gilroy/Gilroylight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 body {
   font-family: 'Gilroy', 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 30px;
   font-weight: normal;
-  line-height: 22px; }
+  color: black; }
+
+h1 {
+  font-size: 47px;
+  line-height: 47px;
+  margin: 0; }
+
+h2 {
+  font-size: 16px;
+  line-height: 16px; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+a:visited {
+  color: black; }
 
 .main-page {
   box-sizing: border-box;
@@ -14,12 +40,58 @@ body {
   padding-left: 20px; }
 
 .header {
-  height: 300px;
-  background-color: #f7e296; }
+  background-color: #f7e296;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 20px;
+  padding-bottom: 150px; }
+
+.user-nav {
+  display: flex;
+  justify-content: space-between; }
+  .user-nav a {
+    font-size: 15px;
+    line-height: 36px; }
+  .user-nav__items {
+    display: flex;
+    justify-content: space-between;
+    width: 48%; }
+  .user-nav__sign-in a {
+    padding-left: 25px;
+    position: relative; }
+  .user-nav__sign-in a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 13px;
+    height: 12px;
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: -53px -91px;
+    top: 0;
+    left: 0; }
+
+.main-nav {
+  display: flex;
+  justify-content: space-between; }
+  .main-nav a {
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold; }
+  .main-nav__items {
+    display: flex;
+    justify-content: space-between;
+    width: 48%; }
 
 .logo {
   margin: 0;
-  display: inline-block; }
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 48px;
+  margin-top: -20px;
+  font-weight: bold; }
 
 .header__decorative-element {
   width: 100px;
@@ -34,5 +106,73 @@ body {
 
 .main-nav__submenu {
   display: none; }
+
+.slider {
+  padding-left: 60px;
+  padding-right: 60px;
+  background: url(../img/slider-1.png) no-repeat;
+  background-position-x: 100px;
+  text-align: right; }
+
+.slide {
+  width: 48%;
+  display: inline-block; }
+
+.slide__number {
+  font-size: 179px;
+  line-height: 179px;
+  font-weight: bold; }
+
+.popular {
+  display: flex;
+  justify-content: space-between; }
+  .popular .popular__item:first-of-type div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-1.png); }
+  .popular .popular__item:nth-child(2) div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-2.png); }
+  .popular .popular__item:nth-child(3) div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-3.png); }
+  .popular .popular__item:nth-child(4) div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-4.png); }
+  .popular .popular__item:nth-child(5) div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-5.png); }
+  .popular .popular__item:last-of-type div {
+    width: 160px;
+    height: 160px;
+    background-color: #f7e296;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -100000px;
+    background-image: url(../img/popular-6.png); }
 
 /*# sourceMappingURL=style.css.map */
