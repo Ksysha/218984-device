@@ -7,7 +7,7 @@
     <title>HTML Academy: Девайс</title>
   </head>
   <body>
-    <div class="main-page">
+    <div class="main-page inner">
       <div class="main-wrapper">
         <header class="header">
           <a href="index.html" class="logo"><span>device</span></a>
@@ -20,7 +20,7 @@
               <li class="user-nav__sign-in">
                 <a href="#">Войти</a>
               </li>
-              <li class="user-nav__sign-out" style="display: none;">
+              <li class="user-nav__sign-out hidden">
                 <a href="#"><span class="user__name">Валентин Петухов</span></a>
                 <a href="#">Выйти</a>
               </li>
@@ -68,7 +68,7 @@
               <a>Моноподы для селфи</a>
             </li>
           </ul>
-          <div class="filters">
+          <section class="filters">
             <h2 class="filters__title">Фильтр:</h2>
             <form class="filters__form" action="filters.html" method="post">
               <div class="filters__field">
@@ -130,18 +130,18 @@
               </div>
               <button type="submit" class="btn">Показать</button>
             </form>
-          </div>
-          <div class="sort">
-            <h2 class="sort__title">Сортировка:</h2>
-            <ul>
-              <li><a href="#">По цене</a></li>
-              <li><a href="#">По типу</a></li>
-              <li><a href="#">По популярности</a></li>
-            </ul>
-            <a href="#" class="sort-up">Стрелка вверх</a>
-            <a href="#" class="sort-down">Стрелка вниз</a>
-          </div>
+          </section>
           <section class="catalog">
+            <div class="sort">
+              <h2 class="sort__title">Сортировка:</h2>
+              <ul>
+                <li><a href="#">По цене</a></li>
+                <li><a href="#">По типу</a></li>
+                <li><a href="#">По популярности</a></li>
+              </ul>
+              <a href="#" class="sort-up">Стрелка вверх</a>
+              <a href="#" class="sort-down">Стрелка вниз</a>
+            </div>
             <article class="product-card">
               <img src="img/item-1.jpg" width="360" height="360" alt="Фото товара"></img>
               <h3 class="product-card__title">Любительская селфи-палка</h3>
@@ -195,7 +195,7 @@
             <p class="address">г. Москва, ул. Строителей, 15</p>
           </div>
           <div>
-            <ul class="menu__items">
+            <ul class="main-nav__items">
               <li><a href="#">Доставка</a></li>
               <li><a href="#">Гарантия</a></li>
               <li><a href="#">Контакты</a></li>
@@ -207,7 +207,7 @@
             </ul>
           </div>
           <div>
-            <ul class="user-items user-items--yellow">
+            <ul class="user-nav__items user-items--yellow">
               <li>
                 <a href="#">Войти</a>
               </li>
@@ -218,10 +218,11 @@
                 <a href="#">Корзина</a>
               </li>
             </ul>
-
-            <span class="phone-number">Тел: </span>
-            <a href="tel:84954959595">+7 495 495-95-95</a>
-            <img src="img/logo-htmlacademy.png" alt="HTML Academy" width="108" height="38">
+            <div class="phone-number">
+              <span class="phone-number">Тел: </span>
+              <a href="tel:84954959595">+7 495 495-95-95</a>
+            </div>
+            <img src="img/htmlacademy-logo.png" alt="HTML Academy" width="27" height="34">
           </div>
         </footer>
       </div>

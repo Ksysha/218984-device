@@ -1,5 +1,7 @@
 $main-color: #f7e296;
 $grey: #e5e5e5;
+$dark-grey: #6b6b6b;
+$footer-color: #464646;
 
 @mixin inline-block {
   display: inline-block;
@@ -74,8 +76,13 @@ ul {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -133,7 +140,7 @@ a:visited {
 .main-nav {
   @include flex;
 
-  a {
+  &__catalog {
     @include upper_font(18px);
     font-weight: bold;
   }
@@ -141,6 +148,8 @@ a:visited {
   &__items {
     @include flex;
     width: 48%;
+    @include upper_font(18px);
+    font-weight: bold;
   }
 }
 
@@ -171,21 +180,67 @@ a:visited {
   background: url(../img/slider-1.png) no-repeat;
   background-position-x: 100px;
   text-align: right;
+  min-height: 486px;
+  margin-top: -100px;
+  margin-bottom: 100px;
 }
 .slide {
   width: 48%;
   display: inline-block;
+  text-align: left;
+  position: relative;
 }
 .slide__number {
   font-size: 179px;
-  line-height: 179px;
+  line-height: 133px;
   font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
 }
+.slide__title {
+  margin-right: 100px;
+  margin-top: 80px;
+}
+.slide__description {
+  margin-right: 20px;
+}
+.slide__properties {
+  @include flex($justify-content: flex-right);
+  span {
+    display: block;
+  }
+  div {
+    margin-right: 70px;
 
+    span:first-of-type {
+      font-size: 36px;
+      line-height: 36px;
+    }
+    span:nth-child(2) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
 .popular {
   @include flex;
+  margin-bottom: 185px;
+
+  span {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    width: 160px;
+    display: inline-block;
+  }
 
   .popular__item {
+    div {
+      margin-bottom: 35px;
+    }
+
     &:first-of-type div {
       @include popular;
       background-image: url(../img/popular-1.png);
@@ -216,4 +271,253 @@ a:visited {
       background-image: url(../img/popular-6.png);
     }
   }
+}
+
+.services-wrapper {
+  min-height: 280px;
+  background-color: $grey;
+}
+.services {
+  position: relative;
+  margin-left: 140px;
+
+  input {
+    display: none;
+
+    &:checked + label {
+      color: $main-color;
+      background: black;
+    }
+  }
+
+  label {
+    @include upper_font(18px);
+    display: block;
+    box-sizing: border-box;
+    padding-left: 22px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: black;
+    cursor: pointer;
+    width: 280px;
+    margin-bottom: 25px;
+  }
+
+  #services1:checked ~ .services__content1,
+  #services2:checked ~ .services__content2,
+  #services3:checked ~ .services__content3 {
+    display: block;
+  }
+
+  &__content1 {
+    display: none;
+    background-color: $grey;
+    padding-left: 125px;
+    position: absolute;
+    top: 0;
+    left: 180px;
+  }
+  &__content2 {
+    display: none;
+    background-color: $grey;
+    padding-left: 125px;
+    position: absolute;
+    top: 0;
+    left: 180px;
+  }
+  &__content3 {
+    display: none;
+    background-color: $grey;
+    padding-left: 125px;
+    position: absolute;
+    top: 0;
+    left: 180px;
+  }
+}
+
+.brand {
+  margin-bottom: 150px;
+}
+.index-content {
+  @include flex;
+
+  h3 {
+    font-size: 47px;
+    line-height: 43px;
+    margin-bottom: 60px;
+  }
+
+  p {
+    margin-bottom: 45px;
+    color: $dark-grey;
+  }
+
+  ul {
+    font-weight: bold;
+
+    li:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+  }
+  .btn {
+    margin-top: 70px;
+    margin-bottom: 90px;
+    display: inline-block;
+  }
+}
+
+footer {
+  @include flex;
+  background-color: $footer-color;
+  padding: 65px 0;
+  color: white;
+
+  a {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+div:last-of-type {
+  text-align: right;
+}
+
+  .logo {
+    margin: 0;
+    color: $main-color;
+    margin-bottom: 10px;
+  }
+
+  .main-nav__items {
+    width: auto;
+    margin-bottom: 60px;
+    margin-top: 65px;
+
+    li {
+      margin-right: 35px;
+    }
+  }
+
+  .user-nav__items {
+    width: auto;
+    margin-bottom: 30px;
+
+    li {
+      margin-right: 35px;
+    }
+  }
+
+  .phone-number {
+    margin-bottom: 40px;
+  }
+}
+.social {
+  @include flex(center);
+
+  li {
+    margin-right: 15px;
+  }
+}
+
+.inner {
+  h1 {
+    margin-top: 45px;
+    margin-left: 60px;
+  }
+}
+.breadcrumbs {
+  margin: 0;
+  margin-top: 15px;
+  margin-left: 60px;
+  margin-bottom: 45px;
+  padding: 0;
+
+  vertical-align: middle;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before {
+      margin-right: 2px;
+      margin-left: 3px;
+
+      content: '>';
+
+      color: #e0e0e0;
+    }
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  a {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 36px;
+  }
+}
+
+.filters {
+  width: 18%;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 60px;
+  padding-right: 66px;
+  background-color: #efefef;
+
+  h2 {
+    @include upper_font(16px);
+    font-weight: bold;
+    background-color: #dbdbdb;
+    margin: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  &__field {
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .colors {
+      @include flex;
+      flex-direction: column;
+    }
+    .bluetooth {
+      @include flex;
+      flex-direction: column;
+    }
+  }
+}
+.catalog {
+  display: inline-block;
+  padding-left: 70px;
+}
+.sort {
+  @include flex;
+  padding-top: 27px;
+  background-color: #ebebeb;
+  margin-bottom: 70px;
+  ul {
+    @include flex;
+  }
+  h2 {
+    @include upper_font(16px);
+    font-weight: bold;
+    margin: 0;
+  }
+}
+.page-control {
+  @include flex(flex-end);
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.hidden {
+  display: none;
 }
