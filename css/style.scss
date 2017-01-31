@@ -89,7 +89,7 @@ a:visited {
   color: black;
 }
 
-.main-page
+/*.main-page
 {
     box-sizing: border-box;
     width: 1200px;
@@ -99,6 +99,12 @@ a:visited {
 {
     padding-right: 20px;
     padding-left: 20px;
+}*/
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .header {
   background-color: $main-color;
@@ -279,7 +285,6 @@ a:visited {
 }
 .services {
   position: relative;
-  margin-left: 140px;
 
   input {
     display: none;
@@ -367,11 +372,13 @@ a:visited {
 }
 
 footer {
-  @include flex;
   background-color: $footer-color;
   padding: 65px 0;
   color: white;
 
+  .container {
+    @include flex;
+  }
   a {
     color: white;
   }
@@ -380,9 +387,9 @@ footer {
     color: white;
   }
 
-div:last-of-type {
-  text-align: right;
-}
+  div div:last-of-type {
+    text-align: right;
+  }
 
   .logo {
     margin: 0;
@@ -422,10 +429,8 @@ div:last-of-type {
 }
 
 .inner {
-  h1 {
-    margin-top: 45px;
-    margin-left: 60px;
-  }
+  margin-top: 45px;
+  margin-left: 60px;
 }
 .breadcrumbs {
   margin: 0;
@@ -460,6 +465,10 @@ div:last-of-type {
   }
 }
 
+.container.wrapper {
+    @include flex(inherit);
+}
+
 .filters {
   width: 18%;
   display: inline-block;
@@ -468,13 +477,16 @@ div:last-of-type {
   padding-right: 66px;
   background-color: #efefef;
 
-  h2 {
+  &__title {
     @include upper_font(16px);
     font-weight: bold;
     background-color: #dbdbdb;
     margin: 0;
     padding-top: 27px;
     padding-bottom: 27px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 11%;
   }
 
   &__field {
@@ -493,14 +505,16 @@ div:last-of-type {
   }
 }
 .catalog {
-  display: inline-block;
+  @include flex;
+  flex-wrap: wrap;
   padding-left: 70px;
+  margin-top: 70px;
 }
 .sort {
+  padding-left: 73px;
   @include flex;
   padding-top: 27px;
   background-color: #ebebeb;
-  margin-bottom: 70px;
   ul {
     @include flex;
   }
