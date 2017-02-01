@@ -465,28 +465,32 @@ footer {
   }
 }
 
-.container.wrapper {
+.wrapper {
+  background-image: linear-gradient(to right,#dcdcdc 32%,#ebebeb 32%);
+  .container {
     @include flex(inherit);
+  }
+  &--catalog {
+    background-image: linear-gradient(to right,#efefef 32%,#ffffff 32%);
+  }
 }
 
 .filters {
-  width: 18%;
-  display: inline-block;
-  vertical-align: top;
+  width: 328px;
   padding-left: 60px;
   padding-right: 66px;
-  background-color: #efefef;
+  box-sizing: border-box;
 
   &__title {
     @include upper_font(16px);
     font-weight: bold;
-    background-color: #dbdbdb;
     margin: 0;
     padding-top: 27px;
     padding-bottom: 27px;
     padding-left: 60px;
     padding-right: 60px;
-    width: 11%;
+    width: 328px;
+    box-sizing: border-box;
   }
 
   &__field {
@@ -509,12 +513,12 @@ footer {
   flex-wrap: wrap;
   padding-left: 70px;
   margin-top: 70px;
+  width: 832px;
 }
 .sort {
   padding-left: 73px;
   @include flex;
   padding-top: 27px;
-  background-color: #ebebeb;
   ul {
     @include flex;
   }
