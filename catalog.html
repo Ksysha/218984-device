@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <header class="header">
-          <a href="index.html" class="logo"><span>device</span></a>
+          <a href="index.html" class="logo">device</a>
           <nav class="user-nav">
             <form class="search-form">
               <input type="text" placeholder="Поиск по сайту">
@@ -152,52 +152,60 @@
           <section class="catalog">
             <article class="product-card">
               <img src="img/item-1.jpg" width="360" height="380" alt="Фото товара"></img>
-              <h3 class="product-card__title">Любительская селфи-палка</h3>
-              <span class="product-card__price">500 руб</span>
-              <a href="#" class="btn">В корзину</a>
-              <button type="button">Добавить к сравнению</button>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Любительская селфи-палка</h3>
+                <span class="product-card__price">500 руб</span>
+              </div>
+              <a href="#" class="btn hidden">В корзину</a>
+              <button type="button" class="hidden">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <img src="img/item-2.jpg" width="360" height="380" alt="Фото товара"></img>
-              <h3 class="product-card__title">Профессиональная селфи-палка</h3>
-              <span class="product-card__price">1500 руб</span>
-              <a href="#" class="btn">В корзину</a>
-              <button type="button">Добавить к сравнению</button>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Профессиональная селфи-палка</h3>
+                <span class="product-card__price">1500 руб</span>
+              </div>
+              <a href="#" class="btn hidden">В корзину</a>
+              <button type="button" class="hidden">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <img src="img/item-3.jpg" width="360" height="380" alt="Фото товара"></img>
-              <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
-              <span class="product-card__price">500 руб</span>
-              <a href="#" class="btn">В корзину</a>
-              <button type="button">Добавить к сравнению</button>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
+                <span class="product-card__price">500 руб</span>
+              </div>
+              <a href="#" class="btn hidden">В корзину</a>
+              <button type="button" class="hidden">Добавить к сравнению</button>
             </article>
             <article class="product-card">
               <img src="img/item-4.jpg" width="360" height="380" alt="Фото товара"></img>
-              <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
-              <span class="product-card__price">4900 руб</span>
-              <a href="#" class="btn">В корзину</a>
-              <button type="button">Добавить к сравнению</button>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
+                <span class="product-card__price">4900 руб</span>
+              </div>
+              <a href="#" class="btn hidden">В корзину</a>
+              <button type="button" class="hidden">Добавить к сравнению</button>
             </article>
+            <ul class="page-control">
+              <li>
+                <a class="page-control__prev">Назад</a>
+              </li>
+              <li>
+                <a class="page-control__btn current" href="#">1</a>
+              </li>
+              <li>
+                <a href="#" class="page-control__btn">2</a>
+              </li>
+              <li>
+                <a class="page-control__btn" href="#">3</a>
+              </li>
+              <li>
+                <a href="#" class="page-control__next">Вперед</a>
+              </li>
+            </ul>
           </section>
         </div>
       </div>
-      <ul class="page-control">
-          <li>
-            <a class="page-control__prev">Назад</a>
-          </li>
-          <li>
-            <a class="page-control__btn current" href="#">1</a>
-          </li>
-          <li>
-            <a href="#" class="page-control__btn">2</a>
-          </li>
-          <li>
-            <a class="page-control__btn" href="#">3</a>
-          </li>
-          <li>
-            <a href="#" class="page-control__next">Вперед</a>
-          </li>
-        </ul>
     </main>
     <footer>
         <div class="container">

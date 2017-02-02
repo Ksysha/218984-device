@@ -106,6 +106,7 @@ a:visited {
   text-transform: uppercase;
   font-size: 48px;
   line-height: 48px;
+  line-height: 36px;
   margin-top: -20px;
   font-weight: bold; }
 
@@ -408,7 +409,23 @@ footer {
   flex-wrap: wrap;
   padding-left: 70px;
   margin-top: 70px;
-  width: 832px; }
+  width: 832px;
+  box-sizing: border-box; }
+
+.product-card {
+  margin-bottom: 70px; }
+  .product-card__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px; }
+  .product-card__title {
+    font-size: 18px;
+    line-height: 14px;
+    margin: 0;
+    width: 260px; }
+  .product-card__price {
+    font-size: 16px;
+    line-height: 16px; }
 
 .sort {
   padding-left: 73px;
@@ -427,9 +444,12 @@ footer {
 
 .page-control {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #ebebeb;
+  width: 760px;
   margin: 0;
-  padding: 0; }
+  margin-bottom: 73px; }
 
 .hidden {
   display: none; }
