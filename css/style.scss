@@ -45,9 +45,18 @@ $footer-color: #464646;
 @font-face{
   font-family: 'Gilroy';
   src: url('../fonts/web/gilroylight.woff') format('woff'),
-  url('../fonts/gilroy/Gilroylight.ttf') format('truetype');
+  url('../fonts/gilroy/Gilroylight.ttf') format('truetype'),
+  url('../fonts/web/gilroyextrabold.woff') format('woff'),
+  url('../fonts/gilroy/Gilroyextrabold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+@font-face{
+  font-family: 'Gilroy';
+  src: url('../fonts/web/gilroyextrabold.woff') format('woff'),
+  url('../fonts/gilroy/Gilroyextrabold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
 }
 
 body
@@ -110,13 +119,14 @@ a:visited {
   background-color: $main-color;
   padding-left: 60px;
   padding-right: 60px;
-  margin-top: 20px;
-  padding-bottom: 150px;
+  margin-top: 19px;
+  padding-bottom: 52px;
 }
 
 .user-nav {
   @include flex;
-
+  margin-top: 13px;
+  margin-bottom: 37px;
   a {
     font-size: 15px;
     line-height: 36px;
@@ -128,6 +138,7 @@ a:visited {
   }
 
   &__sign-in {
+    flex-grow: 2;
 
     a {
       padding-left: 25px;
@@ -137,6 +148,34 @@ a:visited {
     a::before {
       @include pseudo(13px, 12px);
       @include sprite(-53px, -91px);
+      top: 0;
+      left: 0;
+    }
+  }
+  &__compare {
+
+    a {
+      padding-left: 25px;
+      position: relative;
+    }
+
+    a::before {
+      @include pseudo(15px, 12px);
+      @include sprite(-48px, -4px);
+      top: 0;
+      left: 0;
+    }
+  }
+  &__backet {
+
+    a {
+      padding-left: 25px;
+      position: relative;
+    }
+
+    a::before {
+      @include pseudo(15px, 12px);
+      @include sprite(-4px, -4px);
       top: 0;
       left: 0;
     }
@@ -157,6 +196,9 @@ a:visited {
     @include upper_font(18px);
     font-weight: bold;
   }
+  &__garanty {
+    flex-grow: 2;
+  }
 }
 
 .logo {
@@ -164,7 +206,7 @@ a:visited {
   display: inline-block;
   @include upper_font(48px);
   line-height: 36px;
-  margin-top: -20px;
+  margin-top: -15px;
   font-weight: bold;
 }
 .header__decorative-element {
@@ -340,9 +382,41 @@ a:visited {
     left: 180px;
   }
 }
-
-.brand {
+.brands {
   margin-bottom: 150px;
+  @include flex;
+
+  &__item {
+    text-indent: -100000px;
+    display: inline-block;
+    width: 260px;
+    height: 100px;
+
+    &:first-of-type {
+      background-image: url(../img/logo-1-mono.jpg);
+      &:hover {
+        background-image: url(../img/logo-1.jpg);
+      }
+    }
+    &:nth-child(2) {
+      background-image: url(../img/logo-2-mono.jpg);
+      &:hover {
+        background-image: url(../img/logo-2.jpg);
+      }
+    }
+    &:nth-child(3) {
+      background-image: url(../img/logo-3-mono.jpg);
+      &:hover {
+        background-image: url(../img/logo-3.jpg);
+      }
+    }
+    &:last-of-type {
+      background-image: url(../img/logo-4-mono.jpg);
+      &:hover {
+        background-image: url(../img/logo-4.jpg);
+      }
+    }
+  }
 }
 .index-content {
   @include flex;
@@ -374,7 +448,7 @@ a:visited {
 
 footer {
   background-color: $footer-color;
-  padding: 65px 0;
+  padding: 62px 0;
   color: white;
 
   .container {
@@ -395,13 +469,13 @@ footer {
   .logo {
     margin: 0;
     color: $main-color;
-    margin-bottom: 10px;
+    margin-bottom: 33px;
   }
 
   .main-nav__items {
     width: auto;
     margin-bottom: 60px;
-    margin-top: 65px;
+    margin-top: 77px;
 
     li {
       margin-right: 35px;
@@ -410,7 +484,7 @@ footer {
 
   .user-nav__items {
     width: auto;
-    margin-bottom: 30px;
+    margin-bottom: 39px;
 
     li {
       margin-right: 35px;
@@ -418,7 +492,7 @@ footer {
   }
 
   .phone-number {
-    margin-bottom: 40px;
+    margin-bottom: 62px;
   }
 }
 .social {
@@ -430,14 +504,14 @@ footer {
 }
 
 .inner {
-  margin-top: 45px;
+  margin-top: 38px;
   margin-left: 60px;
 }
 .breadcrumbs {
   margin: 0;
-  margin-top: 15px;
+  margin-top: 18px;
   margin-left: 60px;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   padding: 0;
 
   vertical-align: middle;
@@ -447,8 +521,8 @@ footer {
     vertical-align: middle;
 
     &:before {
-      margin-right: 2px;
-      margin-left: 3px;
+      margin-right: 11px;
+      margin-left: 10px;
 
       content: '>';
 
@@ -481,6 +555,7 @@ footer {
   padding-left: 60px;
   padding-right: 66px;
   box-sizing: border-box;
+  padding-top: 69px;
 
   &__title {
     @include upper_font(16px);
@@ -495,9 +570,17 @@ footer {
   }
 
   &__field {
+    position: relative;
+    &::before {
+      @include pseudo(201px, 2px);
+      background-color: black;
+      left: -1px;
+    }
+
     p {
       font-size: 18px;
       font-weight: bold;
+      padding-top: 10px;
     }
     .colors {
       @include flex;
@@ -512,16 +595,16 @@ footer {
 .catalog {
   @include flex;
   flex-wrap: wrap;
-  padding-left: 70px;
+  padding-left: 72px;
   margin-top: 70px;
   width: 832px;
   box-sizing: border-box;
 }
 .product-card {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
   &__content {
     @include flex;
-    margin-top: 35px;
+    margin-top: 27px;
   }
   &__title {
     font-size: 18px;
@@ -538,6 +621,8 @@ footer {
   padding-left: 73px;
   @include flex;
   padding-top: 27px;
+  width: 832px;
+  box-sizing: border-box;
   ul {
     @include flex;
   }
@@ -549,12 +634,12 @@ footer {
 }
 .page-control {
   @include flex;
-  padding: 30px;
+  padding: 20px 30px;
   background-color: #ebebeb;
   width: 760px;
   margin: 0;
   margin-bottom: 73px;
-
+  margin-top: -10px;
 }
 
 .hidden {
