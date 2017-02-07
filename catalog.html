@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Девайс</title>
   </head>
-  <body>
+  <body class="inner">
     <div class="container">
       <header class="header">
           <a href="index.html" class="logo">device</a>
@@ -32,7 +32,7 @@
             </ul>
           </nav>
           <nav class="main-nav">
-            <a class="main-nav__catalog" href="catalog.html">Каталог товаров</a>
+            <a class="main-nav__catalog" href="#">Каталог товаров</a>
             <div class="main-nav__submenu">
               <ul>
                 <li>Виртуальная реальность</li>
@@ -57,7 +57,7 @@
     </div>
     <main>
       <div class="container">
-        <h1 class="inner">Моноподы для селфи</h1>
+        <h1>Моноподы для селфи</h1>
         <ul class="breadcrumbs">
           <li>
             <a href="index.html">Главная</a>
@@ -75,13 +75,13 @@
           <h2 class="filters__title">Фильтр:</h2>
           <div class="sort">
             <h2 class="sort__title">Сортировка:</h2>
-            <ul>
-              <li><a href="#">По цене</a></li>
+            <ul class="sort__list">
+              <li><a class="active" href="#">По цене</a></li>
               <li><a href="#">По типу</a></li>
               <li><a href="#">По популярности</a></li>
             </ul>
-            <a href="#" class="sort-up">Стрелка вверх</a>
-            <a href="#" class="sort-down">Стрелка вниз</a>
+            <a href="#" class="sort__up">Стрелка вверх</a>
+            <a href="#" class="sort__down active">Стрелка вниз</a>
           </div>
         </div>
       </div>
@@ -94,11 +94,13 @@
                 <div class="price">
                   <div class="price__controls">
                     <div class="price__scale">
-                      <div class="price__bar" style="margin-left: 21%; width: 42%"></div>
+                      <div class="price__bar" style="margin-left: 10px; width: 50%"></div>
                     </div>
                     <div class="price__toggle price__toggle--min"></div>
                     <div class="price__toggle price__toggle--max"></div>
                   </div>
+                  <label class="min-price">от <input name="min-price" id="min-price" type="text" value="0"></label>
+                  <label class="max-price">до <input name="max-price" id="max-price" type="text" value="5000"></label>
                 </div>
               </div>
               <div class="filters__field">
@@ -115,17 +117,17 @@
                       Белый
                     </label>
                     <label>
-                      <input type="checkbox" name="blue-color" value="blue-color" class="colors__item">
+                      <input type="checkbox" name="blue-color" value="blue-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
                       Синий
                     </label>
                     <label>
-                      <input type="checkbox" name="red-color" value="red-color" class="colors__item">
+                      <input type="checkbox" name="red-color" value="red-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
                       Красный
                     </label>
                     <label>
-                      <input type="checkbox" name="pink-color" value="pink-color" class="colors__item" checked>
+                      <input type="checkbox" name="pink-color" value="pink-color" class="colors__item">
                       <span class="indicator-checkbox"></span>
                       Розовый
                     </label>
@@ -135,12 +137,12 @@
                 <p>Bluetooth</p>
                 <div class="bluetooth">
                     <label>
-                      <input type="radio" name="yes" class="bluetooth__radio" value="yes">
+                      <input type="radio" name="bluetooth" class="bluetooth__item" value="yes" checked>
                       <span class="indicator-radio"></span>
                       Есть
                     </label>
                     <label>
-                      <input type="radio" name="no" class="bluetooth__radio" value="no" checked>
+                      <input type="radio" name="bluetooth" class="bluetooth__item" value="no">
                       <span class="indicator-radio"></span>
                       Нет
                     </label>
@@ -163,7 +165,7 @@
               <img src="img/item-2.jpg" width="360" height="380" alt="Фото товара"></img>
               <div class="product-card__content">
                 <h3 class="product-card__title">Профессиональная селфи-палка</h3>
-                <span class="product-card__price">1500 руб</span>
+                <span class="product-card__price">1 500 руб</span>
               </div>
               <a href="#" class="btn hidden">В корзину</a>
               <button type="button" class="hidden">Добавить к сравнению</button>
@@ -172,7 +174,7 @@
               <img src="img/item-3.jpg" width="360" height="380" alt="Фото товара"></img>
               <div class="product-card__content">
                 <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
-                <span class="product-card__price">500 руб</span>
+                <span class="product-card__price">2 500 руб</span>
               </div>
               <a href="#" class="btn hidden">В корзину</a>
               <button type="button" class="hidden">Добавить к сравнению</button>
@@ -181,7 +183,7 @@
               <img src="img/item-4.jpg" width="360" height="380" alt="Фото товара"></img>
               <div class="product-card__content">
                 <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
-                <span class="product-card__price">4900 руб</span>
+                <span class="product-card__price">4 900 руб</span>
               </div>
               <a href="#" class="btn hidden">В корзину</a>
               <button type="button" class="hidden">Добавить к сравнению</button>
@@ -210,7 +212,7 @@
     <footer>
         <div class="container">
           <div>
-            <a href="index.html" class="logo"><h1>device</h1></a>
+            <a href="index.html" class="logo">device</a>
             <p class="address">г. Москва, ул. Строителей, 15</p>
           </div>
           <div>

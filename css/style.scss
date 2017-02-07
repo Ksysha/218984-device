@@ -33,6 +33,12 @@ $footer-color: #464646;
   background-position: $position-x $position-y;
 }
 
+@mixin sprite2($position-x: 0px, $position-y: 0px) {
+  background-image: url(../img/sprite-2.png);
+  background-repeat: no-repeat;
+  background-position: $position-x $position-y;
+}
+
 @mixin popular {
   width: 160px;
   height: 160px;
@@ -46,8 +52,10 @@ $footer-color: #464646;
   @include upper_font(18px);
   font-weight: bold;
   box-sizing: border-box;
-  padding-left: 42px;
+  padding-left: 40px;
   padding-right: 40px;
+  padding-top: 11px;
+  padding-bottom: 11px;
   letter-spacing: 3.8px;
   position: relative;
   display: inline-block;
@@ -111,14 +119,18 @@ p {
   margin: 0;
 }
 
+input:focus {
+  outline: none;
+}
+
 a {
   text-decoration: none;
   color: black;
 }
 
-a:visited {
-  color: black;
-}
+// a:visited {
+//   color: black;
+// }
 
 /*.main-page
 {
@@ -152,7 +164,7 @@ a:visited {
 .user-nav {
   @include flex;
   margin-top: -2px;
-  margin-bottom: 37px;
+  margin-bottom: 34px;
   a {
     font-size: 15px;
     line-height: 36px;
@@ -161,6 +173,14 @@ a:visited {
   &__items {
     @include flex;
     width: 48%;
+
+    li:hover {
+      opacity: 0.6;
+    }
+
+    li:active {
+      opacity: 0.302;
+    }
   }
 
   &__sign-in {
@@ -208,13 +228,103 @@ a:visited {
   }
 }
 
+.search-form {
+  position: relative;
+
+  &:hover {
+    ::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  input {
+    background-color: $main-color;
+    border: none;
+    padding-left: 40px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+    width: 356px;
+    box-sizing: border-box;
+    border-bottom: 2px solid $main-color;
+
+    &:focus,
+    &:active {
+      border-bottom: 2px solid black;
+
+      + button {
+        display: inline-block;
+      }
+    }
+  }
+
+  button {
+    display: none;
+    box-shadow: inset 0 0 0 2px black;
+    border: none;
+    background-color: $main-color;
+    padding-left: 20px;
+    padding-right: 21px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: absolute;
+    top: -10px;
+    right: -86px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+
+    &:active {
+      background-color: black;
+      color: rgba(255, 255, 255, 0.302);
+    }
+  }
+
+  &::before {
+    @include pseudo(17px, 17px);
+    @include sprite(-98px, -52px);
+    top: 8px;
+    left: 4px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.302);
+  }
+}
+
 .main-nav {
   @include flex;
+
+  a:hover {
+    color: rgba(0,0,0,0.6);
+  }
+
+  a:active {
+    color: rgba(0,0,0,0.302);
+  }
+
+  &__submenu {
+    display: none;
+  }
 
   &__catalog {
     @include upper_font(18px);
     font-weight: bold;
     letter-spacing: 3.5px;
+    position: relative;
+    padding-right: 30px;
+
+    &:hover + .main-nav__submenu{
+      display: inline-block;
+    }
+
+    &::after {
+      @include pseudo(17px, 17px);
+      @include sprite(-4px, -52px);
+      top: 0;
+      right: 0;
+    }
   }
 
   &__items {
@@ -240,6 +350,14 @@ a:visited {
   left: -4px;
   letter-spacing: 0.6px;
   font-weight: bold;
+
+  &:hover {
+    color: #464646;
+  }
+
+  &:active {
+    color: #666666;
+  }
 }
 .header__decorative-element {
   width: 100px;
@@ -273,11 +391,21 @@ a:visited {
 
   .btn {
     @include button;
+    padding-right: 42px;
 
     &:before {
       @include pseudo-button(220px);
-      top: 5px;
+      top: 15px;
       left: 0px;
+    }
+
+    &:hover {
+      background-color: #f0c52e;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.302);
+      background-color: #f0c52e;
     }
   }
   &__number {
@@ -308,12 +436,12 @@ a:visited {
     margin-right: 20px;
     font-size: 15px;
     line-height: 30px;
-    margin-bottom: 46px;
+    margin-bottom: 43px;
   }
 
   &__properties {
     @include flex($justify-content: flex-right);
-    margin-top: 62px;
+    margin-top: 55px;
 
     span {
       display: block;
@@ -348,13 +476,30 @@ a:visited {
     display: inline-block;
   }
 
-  .popular__item {
+  &__item {
     div {
       margin-bottom: 34px;
       width: 160px;
       height: 160px;
-      background-color: #f7e296;
+      background-color: rgba(240, 197, 46, 0.502);
       text-align: center;
+      display: flex;
+
+      img {
+        margin: auto;
+      }
+    }
+
+    &:hover div {
+      background-color: rgba(240, 197, 46, 1);
+    }
+    &:active {
+      img {
+        opacity: 0.302;
+      }
+      span {
+        opacity: 0.302;
+      }
     }
   }
 }
@@ -373,7 +518,7 @@ a:visited {
     @include pseudo(7px, 319px);
     background-color: black;
     z-index: 3;
-    left: 277px;
+    left: 278px;
     top: -80px;
   }
 
@@ -395,7 +540,16 @@ a:visited {
     z-index: 5;
     position: relative;
 
-    &:after {
+    &:active {
+      color: $main-color;
+      background: black;
+
+      &:after {
+        background-color: black;
+      }
+    }
+
+    &::after {
       @include pseudo-button(160px);
       top: 15px;
       left: 0;
@@ -477,7 +631,7 @@ a:visited {
   }
 }
 .brands {
-  margin-bottom: 148px;
+  margin-bottom: 146px;
   @include flex;
 
   &__item {
@@ -514,7 +668,7 @@ a:visited {
 }
 .index-content {
   @include flex;
-
+  margin-bottom: 2px;
   h3 {
     font-size: 47px;
     line-height: 43px;
@@ -526,7 +680,7 @@ a:visited {
     &:before {
       @include pseudo(80px, 7px);
       background-color: black;
-      top: -56px;
+      top: -54px;
       left: 1px;
 
     }
@@ -540,7 +694,7 @@ a:visited {
   ul {
     font-weight: bold;
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     letter-spacing: 0.7px;
 
     li {
@@ -548,12 +702,21 @@ a:visited {
       padding-left: 35px;
       position: relative;
 
-      &:before {
+      &:hover::before {
+        opacity: 0.4;
+      }
+
+      &:active::before {
+        opacity: 1;
+      }
+
+      &::before {
         @include pseudo(10px, 10px);
         border-radius: 50%;
         left: 0;
         top: 10px;
-        box-shadow: inset 0 0 0 3px #b2b2b2;
+        box-shadow: inset 0 0 0 3px black;
+        opacity: 0.302;
       }
     }
   }
@@ -562,10 +725,10 @@ a:visited {
     &:after {
       @include pseudo-button(260px);
       left: 0;
-      top: 4px;
+      top: 17px;
     }
 
-    margin-bottom: 90px;
+    margin-bottom: 81px;
     display: inline-block;
   }
 }
@@ -585,7 +748,7 @@ a:visited {
     height: 220px;
     display: inline-block;
     margin-top: 8px;
-    margin-bottom: 83px;
+    margin-bottom: 72px;
   }
   .btn {
     padding-left: 39px;
@@ -596,13 +759,12 @@ footer {
   background-color: $footer-color;
   padding: 63px 0;
   color: white;
-  margin-top: 2px;
   position: relative;
 
   &:after {
     @include pseudo(80px, 7px);
     background-color: $main-color;
-    bottom: 87px;
+    bottom: 82px;
     left: 133px;
   }
 
@@ -613,20 +775,22 @@ footer {
     color: white;
   }
 
-  a:visited {
-    color: white;
-  }
-
   div div:last-of-type {
     text-align: right;
   }
 
   .logo {
     margin-bottom: 13px;
-    top: -6px;
-    h1 {
-      margin: 0;
-      color: $main-color;
+    top: 3px;
+    margin: 0;
+    color: $main-color;
+
+    &:hover {
+      color: #f0c52e;
+    }
+
+    &:active {
+      color: #796c3f;
     }
   }
   .main-nav__items {
@@ -638,13 +802,30 @@ footer {
     li:not(:last-of-type) {
       margin-right: 40px;
     }
+
+    li {
+      &:hover {
+        opacity: 0.6;
+      }
+      &:active {
+        opacity: 0.302;
+      }
+    }
   }
+
+  .address {
+      margin-top: 24px;
+    }
 
   .user-nav {
 
     &__items {
     width: auto;
-    margin-bottom: 39px;
+    margin-bottom: 34px;
+
+      a {
+        color: rgba(255,255,255,0.702);
+      }
 
       li:not(:last-of-type) {
         margin-right: 35px;
@@ -652,16 +833,49 @@ footer {
     }
 
     &__sign-in {
+
+      &:hover {
+        opacity: 1;
+        a {
+          color: white;
+          &::before {
+            @include sprite2(-146px, -53px);
+          }
+        }
+      }
+
       a::before {
         @include sprite(-76px, -91px);
       }
     }
     &__compare {
+
+      &:hover {
+        opacity: 1;
+        a {
+          color: white;
+          &::before {
+            @include sprite2(-47px, -4px);
+          }
+        }
+      }
+
       a::before {
         @include sprite(-68px, -4px);
       }
     }
     &__backet {
+
+      &:hover {
+        opacity: 1;
+        a {
+          color: white;
+          &::before {
+            @include sprite2(-4px, -5px);
+          }
+        }
+      }
+
       a::before {
         @include sprite(-24px, -4px);
       }
@@ -675,40 +889,63 @@ footer {
 }
 .social {
   @include flex(center);
-  margin-left: 77px;
+  margin-left: 120px;
 
   &__btn {
-    margin-left: 26px;
+    margin-left: 15px;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
+    &:first-of-type {
+      margin-left: 0;
+    }
     a {
       font-size: 0;
       line-height: 0;
       text-indent: -999999px;
+      opacity: 0.302;
       &::before {
         @include pseudo(40px, 39px);
       }
     }
 
+    &:hover a {
+      opacity: 1;
+    }
+
+    &:active a {
+      opacity: 0.6;
+    }
+
     &--fb a::before {
-      @include sprite(-48px, -25px);
+      @include sprite2(-49px, -25px);
     }
     &--inst a::before {
-      @include sprite(-97px, -4px);
+      @include sprite2(-98px, -5px);
     }
     &--twitter a::before {
-      @include sprite(-4px, -91px);
+      @include sprite2(-98px, -53px);
     }
   }
 }
 
 .inner {
-  margin-top: 34px;
-  margin-left: 60px;
-  letter-spacing: 0.5px;
+  h1 {
+    margin-top: 34px;
+    margin-left: 60px;
+    letter-spacing: 0.5px;
+  }
+  footer .logo {
+    top: -2px;
+  }
+  .logo {
+    left: 0;
+  }
 }
+
+
+
 .breadcrumbs {
   margin: 0;
   margin-top: 14px;
@@ -728,7 +965,7 @@ footer {
 
       content: '>';
 
-      color: #e0e0e0;
+      color: rgba(0, 0, 0, 0.302);
     }
     &:first-child::before {
       display: none;
@@ -736,9 +973,16 @@ footer {
   }
 
   a {
-    color: #e0e0e0;
+    color: rgba(0, 0, 0, 0.302);
     font-size: 14px;
     line-height: 36px;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+    }
+    &:active {
+      color: rgba(0, 0, 0, 0.102);
+    }
   }
 }
 
@@ -774,6 +1018,8 @@ footer {
 
   &__field {
     position: relative;
+    margin-bottom: 29px;
+
     &::before {
       @include pseudo(201px, 2px);
       background-color: black;
@@ -784,6 +1030,7 @@ footer {
       font-size: 18px;
       font-weight: bold;
       padding-top: 10px;
+      margin-bottom: 22px;
     }
     .colors {
       @include flex;
@@ -794,7 +1041,196 @@ footer {
       flex-direction: column;
     }
   }
+
+  .btn {
+    @include button;
+    border: none;
+    background-color: #eeeeee;
+    z-index: 1;
+    letter-spacing: 2.5px;
+    margin-top: -5px;
+
+    &::before {
+      @include pseudo-button(200px);
+      left: -2px;
+      top: 15px;
+    }
+  }
 }
+
+.price {
+  min-width: 199px;
+  box-sizing: border-box;
+
+  &__controls {
+    position: relative;
+
+    padding-top: 9px;
+    padding-bottom: 6px;
+  }
+
+  &__scale {
+    height: 2px;
+    background: #dbdbdb;
+  }
+
+  &__bar {
+    width: 70%;
+    height: 2px;
+    background: #91c92f;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 3px;
+    left: 0;
+
+    width: 14px;
+    height: 14px;
+
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px black;
+    background-color: #eeeeee;
+
+    &:active {
+      background-color: #7eae29;
+      box-shadow: inset 0 0 0 3px white;
+    }
+
+    &--min {
+      left: -2px;
+    }
+
+    &--max {
+      left: 110px;
+    }
+  }
+
+  input {
+    font-size: 14px;
+    width: 45px;
+    padding: 8px 0px;
+    text-align: left;
+    color: #bfbfbf;
+    border: none;
+    background-color: #efefef;
+  }
+
+  label {
+    font-size: 14px;
+    line-height: 22px;
+    color: #bfbfbf;
+    position: relative;
+  }
+
+  .max-price {
+    left: 25px;
+  }
+}
+
+
+.colors {
+  position: relative;
+
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    padding-left: 40px;
+    margin-top: -3px;
+    margin-bottom: 13px;
+    letter-spacing: -0.6px;
+
+    &:last-of-type {
+      margin-bottom: 7px;
+    }
+
+    &:hover .indicator-checkbox {
+      background-color: #cecece;
+    }
+
+    &:active .indicator-checkbox {
+      background-color: #c4c4c4;
+    }
+  }
+
+  .indicator-checkbox {
+    width: 23px;
+    height: 23px;
+    background-color: #dbdbdb;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: -2px;
+  }
+
+  &__item:checked {
+
+    & + .indicator-checkbox::before {
+      @include pseudo(10px, 2px);
+      top: 10px;
+      left: 9px;
+      transform: rotate(-38deg);
+      background-color: black;
+    }
+
+    & + .indicator-checkbox::after {
+      @include pseudo(6px, 2px);
+      top: 10px;
+      left: 5px;
+      transform: rotate(42deg);
+      background-color: black;
+    }
+  }
+}
+
+.bluetooth {
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    padding-left: 40px;
+    margin-top: -3px;
+    margin-bottom: 13px;
+    letter-spacing: -0.6px;
+
+    &:hover .indicator-radio {
+      box-shadow: inset 0 0 0 2px rgb(188, 188, 188);
+    }
+
+    &:active .indicator-radio{
+      box-shadow: inset 0 0 0 2px rgb(172, 172, 172);
+    }
+  }
+
+  .indicator-radio {
+    width: 23px;
+    height: 23px;
+    box-shadow: inset 0 0 0 2px #dbdbdb;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: -2px;
+  }
+
+  &__item:checked {
+
+    & + .indicator-radio::before {
+      @include pseudo(9px, 9px);
+      top: 7px;
+      left: 7px;
+      box-shadow: inset 0 0 0 2px black;
+      border-radius: 50%;
+    }
+  }
+}
+
 .catalog {
   @include flex;
   flex-wrap: wrap;
@@ -804,14 +1240,15 @@ footer {
   box-sizing: border-box;
 }
 .product-card {
-  margin-bottom: 60px;
+  margin-bottom: 51px;
+
   &__content {
     @include flex;
-    margin-top: 27px;
+    margin-top: 24px;
   }
   &__title {
     font-size: 18px;
-    line-height: 14px;
+    line-height: 20px;
     margin: 0;
     width: 260px;
   }
@@ -821,21 +1258,106 @@ footer {
   }
 }
 .sort {
+  position: relative;
   padding-left: 73px;
   @include flex;
   padding-top: 27px;
   width: 832px;
   box-sizing: border-box;
-  ul {
+  &__list {
     @include flex;
-    margin-left: -11px;
+    margin-right: 185px;
     margin-top: -8px;
+
+    .active {
+      color: black;
+    }
+
+    a {
+      margin-right: 27px;
+      color: rgba(0, 0, 0, 0.302);
+
+      &:hover:not(.active) {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &:active:not(.active) {
+        color: rgb(0, 0, 0);
+      }
+    }
   }
   &__title {
     @include upper_font(16px);
     font-weight: bold;
     margin: 0;
     letter-spacing: 3.6px;
+    margin-right: 41px;
+  }
+
+  &__up {
+    text-indent: -10000px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      @include pseudo(18px, 16px);
+      @include sprite(-124px, -48px);
+      transform: rotatex(180deg);
+      right: 13px;
+      top: 1px;
+      opacity: 0.2;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.4;
+      }
+    }
+
+    &:active {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__down {
+    text-indent: -10000px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      @include pseudo(18px, 16px);
+      @include sprite(-124px, -48px);
+      right: -1px;
+      top: -2px;
+      opacity: 0.2;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.4;
+      }
+    }
+
+    &:active {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 }
 .page-control {
