@@ -128,21 +128,10 @@ a {
   color: black;
 }
 
-// a:visited {
-//   color: black;
-// }
-
-/*.main-page
-{
-    box-sizing: border-box;
-    width: 1200px;
-    margin: 0 auto;
+button:focus {
+  outline: none;
 }
-.main-wrapper
-{
-    padding-right: 20px;
-    padding-left: 20px;
-}*/
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -154,10 +143,11 @@ a {
   padding-left: 60px;
   padding-right: 60px;
   margin-top: 19px;
-  padding-bottom: 53px;
+  padding-bottom: 0px;
+  z-index: 10;
 
   &--main {
-    padding-bottom: 166px;
+    padding-bottom: 113px;
   }
 }
 
@@ -268,7 +258,7 @@ a {
     padding-bottom: 16px;
     position: absolute;
     top: -10px;
-    right: -86px;
+    right: -80px;
 
     &:hover {
       background-color: black;
@@ -295,35 +285,62 @@ a {
 
 .main-nav {
   @include flex;
+  position: relative;
 
   a:hover {
-    color: rgba(0,0,0,0.6);
+    opacity: 0.6;
   }
 
   a:active {
-    color: rgba(0,0,0,0.302);
+    opacity: 0.302;
   }
 
   &__submenu {
     display: none;
+    position: absolute;
+    top: 46px;
+    left: -60px;
+    width: 100%;
+    background-color: $main-color;
+    z-index: 15;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 27px;
+
+    ul:not(:last-of-type) {
+      margin-right: 60px;
+
+      li {
+        margin-bottom: 7px;
+      }
+    }
+
+    ul {
+      letter-spacing: 0.1px;
+    }
   }
 
   &__catalog {
-    @include upper_font(18px);
-    font-weight: bold;
-    letter-spacing: 3.5px;
-    position: relative;
-    padding-right: 30px;
+    padding-bottom: 45px;
+    margin-top: -4px;
 
-    &:hover + .main-nav__submenu{
-      display: inline-block;
+    > a {
+      @include upper_font(18px);
+      font-weight: bold;
+      letter-spacing: 3.5px;
+      position: relative;
+      padding-right: 30px;
+
+      &::after {
+        @include pseudo(17px, 17px);
+        @include sprite(-4px, -52px);
+        top: 0;
+        right: 0;
+      }
     }
 
-    &::after {
-      @include pseudo(17px, 17px);
-      @include sprite(-4px, -52px);
-      top: 0;
-      right: 0;
+    &:hover .main-nav__submenu{
+      display: flex;
     }
   }
 
@@ -370,10 +387,8 @@ a {
 .wrapper-features {
   background-color: $grey;
 }
-.main-nav__submenu {
-  display: none;
-}
 .slider {
+  position: relative;
   padding-left: 50px;
   padding-right: 60px;
   background: url(../img/slider-1.png) no-repeat;
@@ -382,10 +397,11 @@ a {
   min-height: 486px;
   margin-top: -110px;
   margin-bottom: 105px;
+  z-index: 11;
 }
 .slide {
   width: 500px;
-  display: inline-block;
+  display: none;
   text-align: left;
   position: relative;
 
@@ -416,13 +432,16 @@ a {
     right: -11px;
     top: 8px;
     color: white;
+    z-index: -1;
   }
   &__title {
-    margin-right: 101px;
+    //margin-right: 101px;
     margin-top: 80px;
+    margin-right: -1px;
     letter-spacing: 0.7px;
     margin-bottom: 20px;
     margin-left: -4px;
+    z-index: 11;
 
     &:before {
       @include pseudo(100px, 7px);
@@ -464,6 +483,91 @@ a {
     }
   }
 }
+
+.slider__controls {
+
+  position: absolute;
+  bottom: 129px;
+  right: 61px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    padding-right: 23px;
+  }
+
+  label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    vertical-align: top;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px #b2b2b2;
+
+    &:hover {
+      box-shadow: inset 0 0 0 3px #999999;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 3px black;
+    }
+  }
+}
+
+input[value='product-1']:checked {
+  & ~ .slider {
+    background: url(../img/slider-1.png) no-repeat;
+    background-position-x: 90px;
+
+    label[for=product-1] {
+      box-shadow: inset 0 0 0 3px black;
+    }
+
+    .slide:first-of-type {
+      display: inline-block;
+    }
+  }
+}
+
+input[value='product-2']:checked {
+  & ~ .slider {
+    background: url(../img/slider-2.png) no-repeat;
+    background-position-x: 116px;
+    background-position-y: 11px;
+
+    label[for=product-2] {
+      box-shadow: inset 0 0 0 3px black;
+    }
+
+    .slide:nth-child(2) {
+      display: inline-block;
+    }
+  }
+}
+
+input[value='product-3']:checked {
+  & ~ .slider {
+    background: url(../img/slider-3.png) no-repeat;
+    background-position-x: 31px;
+    background-position-y: 64px;
+
+    label[for=product-3] {
+      box-shadow: inset 0 0 0 3px black;
+    }
+
+    .slide:last-of-type {
+      display: inline-block;
+
+      .slide__properties div {
+        margin-right: 48px;
+      }
+    }
+  }
+}
+
 .popular {
   @include flex;
   margin-bottom: 182px;
@@ -730,6 +834,15 @@ a {
 
     margin-bottom: 81px;
     display: inline-block;
+
+    &:hover {
+      background-color: #f0c52e;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.302);
+      background-color: #f0c52e;
+    }
   }
 }
 
@@ -987,17 +1100,17 @@ footer {
 }
 
 .wrapper {
-  background-image: linear-gradient(to right,#dcdcdc 32%,#ebebeb 32%);
+  background-image: linear-gradient(to right,#dcdcdc 32.33%,#ebebeb 32.33%);
   .container {
     @include flex(inherit);
   }
   &--catalog {
-    background-image: linear-gradient(to right,#efefef 32%,#ffffff 32%);
+    background-image: linear-gradient(to right,#efefef 32.33%,#ffffff 32.33%);
   }
 }
 
 .filters {
-  width: 328px;
+  width: 28.2%;
   padding-left: 60px;
   padding-right: 66px;
   box-sizing: border-box;
@@ -1011,7 +1124,7 @@ footer {
     padding-bottom: 27px;
     padding-left: 60px;
     padding-right: 60px;
-    width: 328px;
+    width: 28.2%;
     box-sizing: border-box;
     letter-spacing: 4px
   }
@@ -1021,7 +1134,7 @@ footer {
     margin-bottom: 29px;
 
     &::before {
-      @include pseudo(201px, 2px);
+      @include pseudo(99.9%, 2px);
       background-color: black;
       left: -1px;
     }
@@ -1052,8 +1165,17 @@ footer {
 
     &::before {
       @include pseudo-button(200px);
-      left: -2px;
+      left: 0px;
       top: 15px;
+    }
+
+    &:hover {
+      background-color: #f0c52e;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.302);
+      background-color: #f0c52e;
     }
   }
 }
@@ -1236,7 +1358,7 @@ footer {
   flex-wrap: wrap;
   padding-left: 72px;
   margin-top: 70px;
-  width: 832px;
+  width: 71.8%;
   box-sizing: border-box;
 }
 .product-card {
@@ -1262,7 +1384,7 @@ footer {
   padding-left: 73px;
   @include flex;
   padding-top: 27px;
-  width: 832px;
+  width: 71.8%;
   box-sizing: border-box;
   &__list {
     @include flex;
