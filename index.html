@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <title>HTML Academy: Девайс</title>
   </head>
   <body>
@@ -258,15 +259,21 @@
           </div>
         </div>
       </footer>
-      <div class="feedback hidden">
+      <div class="feedback">
         <form class="feedback-form" action="feddback-submit.html" method="get">
           <button type="button" class="feedback-form__exit">Закрыть</button>
-          <input class="feedback__name" type="text" id="user-name" name="user-name" placeholder="Представьтесь, пожалуйста">
-          <label class="feedback-form__label" for="user-name">Ваше имя:</label>
-          <input class="feedback-form__email" type="email" id="user-email" name="user-email" placeholder="Для отправки ответа">
-          <label class="feedback-form__label" for="user-email">Ваш e-mail:</label>
-          <textarea name="user-message" id="user-message" placeholder="В свободной форме"></textarea>
-          <label class="feedback-form__label" for="user-message">Текст письма:</label>
+          <div class="feedback-form__name">
+            <label class="feedback-form__label" for="user-name">Ваше имя:</label>
+            <input class="feedback__name" type="text" id="user-name" name="user-name" placeholder="Представьтесь, пожалуйста">
+          </div>
+          <div class="feedback-form__email">
+            <label class="feedback-form__label" for="user-email">Ваш e-mail:</label>
+            <input class="feedback-form__email" type="email" id="user-email" name="user-email" placeholder="Для отправки ответа">
+          </div>
+          <div class="feedback-form__textarea">
+            <label class="feedback-form__label" for="user-message">Текст письма:</label>
+            <textarea name="user-message" id="user-message" placeholder="В свободной форме"></textarea>
+          </div>
           <button class="btn" type="submit">Отправить</button>
         </form>
       </div>
