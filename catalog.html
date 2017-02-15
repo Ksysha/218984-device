@@ -103,35 +103,35 @@
                     <div class="price__toggle price__toggle--min"></div>
                     <div class="price__toggle price__toggle--max"></div>
                   </div>
-                  <label class="min-price">от <input name="min-price" id="min-price" type="text" value="0"></label>
-                  <label class="max-price">до <input name="max-price" id="max-price" type="text" value="5000"></label>
+                  <label class="min-price" for="min-price">от <input name="min-price" id="min-price" type="text" value="0"></label>
+                  <label class="max-price" for="max-price">до <input name="max-price" id="max-price" type="text" value="5000"></label>
                 </div>
               </div>
               <div class="filters__field">
                 <p>Цвет</p>
                 <div class="colors">
-                    <label>
-                      <input type="checkbox" name="black-color" value="black-color" class="colors__item" checked>
+                    <label class="color">
+                      <input type="checkbox" id="black-color" name="black-color" value="black-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
                       Черный
                     </label>
-                    <label>
-                      <input type="checkbox" name="white-color" value="white-color" class="colors__item">
+                    <label class="color">
+                      <input type="checkbox" id="white-color" name="white-color" value="white-color" class="colors__item">
                       <span class="indicator-checkbox"></span>
                       Белый
                     </label>
-                    <label>
-                      <input type="checkbox" name="blue-color" value="blue-color" class="colors__item" checked>
+                    <label class="color">
+                      <input type="checkbox" id="blue-color" name="blue-color" value="blue-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
                       Синий
                     </label>
-                    <label>
-                      <input type="checkbox" name="red-color" value="red-color" class="colors__item" checked>
+                    <label class="color">
+                      <input type="checkbox" id="red-color" name="red-color" value="red-color" class="colors__item" checked>
                       <span class="indicator-checkbox"></span>
                       Красный
                     </label>
-                    <label>
-                      <input type="checkbox" name="pink-color" value="pink-color" class="colors__item">
+                    <label class="color">
+                      <input type="checkbox" id="pink-color" name="pink-color" value="pink-color" class="colors__item">
                       <span class="indicator-checkbox"></span>
                       Розовый
                     </label>
@@ -140,13 +140,13 @@
               <div class="filters__field">
                 <p>Bluetooth</p>
                 <div class="bluetooth">
-                    <label>
-                      <input type="radio" name="bluetooth" class="bluetooth__item" value="yes" checked>
+                    <label class="bluetooth-label">
+                      <input type="radio" id="bluetooth-yes" name="bluetooth" class="bluetooth__item" value="yes" checked>
                       <span class="indicator-radio"></span>
                       Есть
                     </label>
-                    <label>
-                      <input type="radio" name="bluetooth" class="bluetooth__item" value="no">
+                    <label class="bluetooth-label">
+                      <input type="radio" id="bluetooth-no" name="bluetooth" class="bluetooth__item" value="no">
                       <span class="indicator-radio"></span>
                       Нет
                     </label>
@@ -157,7 +157,7 @@
           </section>
           <section class="catalog">
             <article class="product-card">
-              <img src="img/item-1.jpg" width="360" height="380" alt="Фото товара"></img>
+              <img src="img/item-1.jpg" width="360" height="380" alt="Фото товара">
               <div class="product-card__content">
                 <a href="#"><h3 class="product-card__title">Любительская селфи-палка</h3></a>
                 <span class="product-card__price">500 руб</span>
@@ -168,7 +168,7 @@
               </div>
             </article>
             <article class="product-card">
-              <img src="img/item-2.jpg" width="360" height="380" alt="Фото товара"></img>
+              <img src="img/item-2.jpg" width="360" height="380" alt="Фото товара">
               <div class="product-card__content">
                 <a href="#"><h3 class="product-card__title">Профессиональная селфи-палка</h3></a>
                 <span class="product-card__price">1 500 руб</span>
@@ -179,7 +179,7 @@
               </div>
             </article>
             <article class="product-card">
-              <img src="img/item-3.jpg" width="360" height="380" alt="Фото товара"></img>
+              <img src="img/item-3.jpg" width="360" height="380" alt="Фото товара">
               <div class="product-card__content">
                 <a href="#"><h3 class="product-card__title">Непотопляемая селфи-палка</h3></a>
                 <span class="product-card__price">2 500 руб</span>
@@ -190,7 +190,7 @@
               </div>
             </article>
             <article class="product-card">
-              <img src="img/item-4.jpg" width="360" height="380" alt="Фото товара"></img>
+              <img src="img/item-4.jpg" width="360" height="380" alt="Фото товара">
               <div class="product-card__content">
                 <a href="#"><h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3></a>
                 <span class="product-card__price">4 900 руб</span>
@@ -222,13 +222,13 @@
       </div>
     </main>
     <footer class="footer">
-        <div class="container">
+        <div class="container container--footer">
           <div>
-            <a href="index.html" class="logo">device</a>
+            <a href="index.html" class="logo logo--footer">device</a>
             <p class="address">г. Москва, ул. Строителей, 15</p>
           </div>
           <div>
-            <ul class="main-nav__items">
+            <ul class="main-nav__items main-nav__items--footer">
               <li><a href="#">Доставка</a></li>
               <li><a href="#">Гарантия</a></li>
               <li><a href="#">Контакты</a></li>
@@ -240,18 +240,18 @@
             </ul>
           </div>
           <div>
-            <ul class="user-nav__items">
-              <li class="user-nav__sign-in">
+            <ul class="user-nav__items user-nav__items--footer">
+              <li class="user-nav__sign-in user-nav__sign-in--footer">
                 <a href="#">Войти</a>
               </li>
               <li class="user-nav__sign-out hidden">
                 <a href="#"><span class="user__name">Валентин Петухов</span></a>
                 <a href="#">Выйти</a>
               </li>
-              <li class="user-nav__compare">
+              <li class="user-nav__compare user-nav__compare--footer">
                 <a href="#">Сравнить</a>
               </li>
-              <li class="user-nav__backet">
+              <li class="user-nav__backet user-nav__backet--footer">
                 <a href="#">Корзина</a>
               </li>
             </ul>

@@ -5,6 +5,7 @@ $footer-color: #464646;
 
 @mixin inline-block {
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
   padding: 0;
 }
@@ -255,6 +256,7 @@ button:focus {
 
     + button:active {
       display: inline-block;
+      vertical-align: middle;
     }
 
     &:focus{
@@ -263,6 +265,7 @@ button:focus {
 
       + button {
         display: inline-block;
+        vertical-align: middle;
       }
     }
   }
@@ -398,7 +401,8 @@ button:focus {
 
 .logo {
   margin: 0;
-  display: inline-block;
+  display: inline;
+
   @include upper_font(48px);
   line-height: 36px;
   position: relative;
@@ -508,19 +512,21 @@ button:focus {
     }
     div {
       margin-right: 78px;
-
-      span:first-of-type {
-        font-size: 36px;
-        line-height: 36px;
-        margin-bottom: 14px;
-      }
-      span:nth-child(2) {
-        font-size: 13px;
-        line-height: 20px;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-      }
     }
+
+    &--value {
+      font-size: 36px;
+      line-height: 36px;
+      margin-bottom: 14px;
+    }
+
+    &--property {
+      font-size: 13px;
+      line-height: 20px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+    }
+
     div:last-of-type {
       margin-right: 0;
     }
@@ -542,6 +548,7 @@ button:focus {
 
   label {
     display: inline-block;
+    vertical-align: middle;
     width: 10px;
     height: 10px;
     cursor: pointer;
@@ -570,6 +577,7 @@ input[value='product-1']:checked {
 
     .slide:first-of-type {
       display: inline-block;
+      vertical-align: middle;
     }
   }
 }
@@ -586,6 +594,7 @@ input[value='product-2']:checked {
 
     .slide:nth-child(2) {
       display: inline-block;
+      vertical-align: middle;
     }
   }
 }
@@ -602,6 +611,7 @@ input[value='product-3']:checked {
 
     .slide:last-of-type {
       display: inline-block;
+      vertical-align: middle;
 
       .slide__properties div {
         margin-right: 48px;
@@ -612,7 +622,7 @@ input[value='product-3']:checked {
 
 .popular {
   @include flex;
-  margin-bottom: 182px;
+  margin-bottom: 188px;
 
   span {
     font-weight: bold;
@@ -620,6 +630,7 @@ input[value='product-3']:checked {
     line-height: 20px;
     width: 125px;
     display: inline-block;
+    vertical-align: top;
   }
 
   &__item {
@@ -630,10 +641,10 @@ input[value='product-3']:checked {
       background-color: rgba(240, 197, 46, 0.502);
       text-align: center;
       display: flex;
+    }
 
-      img {
-        margin: auto;
-      }
+    img {
+      margin: auto;
     }
 
     &:hover div {
@@ -655,6 +666,7 @@ input[value='product-3']:checked {
   background-color: $grey;
   margin-bottom: 95px;
 }
+
 .services {
   position: relative;
   top: -20px;
@@ -666,19 +678,6 @@ input[value='product-3']:checked {
     z-index: 3;
     left: 278px;
     top: -80px;
-  }
-
-  input {
-    display: none;
-
-    &:checked + label {
-      color: $main-color;
-      background: black;
-
-      &:after {
-        background-color: black;
-      }
-    }
   }
 
   label {
@@ -711,12 +710,6 @@ input[value='product-3']:checked {
     cursor: pointer;
     width: 280px;
     margin-bottom: 25px;
-  }
-
-  .services1:checked ~ .services__content1,
-  .services2:checked ~ .services__content2,
-  .services3:checked ~ .services__content3 {
-    display: block;
   }
 
   &__description {
@@ -780,6 +773,26 @@ input[value='product-3']:checked {
     }
   }
 }
+
+.service {
+  display: none;
+
+  &:checked + label {
+    color: $main-color;
+    background: black;
+
+    &:after {
+      background-color: black;
+    }
+  }
+}
+
+.services1:checked ~ .services__content1,
+.services2:checked ~ .services__content2,
+.services3:checked ~ .services__content3 {
+  display: block;
+}
+
 .brands {
   margin-bottom: 146px;
   @include flex;
@@ -787,31 +800,40 @@ input[value='product-3']:checked {
   &__item {
     text-indent: -100000px;
     display: inline-block;
+    vertical-align: middle;
     width: 260px;
     height: 100px;
 
     &:first-of-type {
       background-image: url(../img/logo-1-mono.jpg);
+      background-color: #e5e5e5;
       &:hover {
         background-image: url(../img/logo-1.jpg);
+        background-color: #e5e5e5;
       }
     }
     &:nth-child(2) {
       background-image: url(../img/logo-2-mono.jpg);
+      background-color: #e5e5e5;
       &:hover {
         background-image: url(../img/logo-2.jpg);
+        background-color: #e5e5e5;
       }
     }
     &:nth-child(3) {
       background-image: url(../img/logo-3-mono.jpg);
+      background-color: #e5e5e5;
       &:hover {
         background-image: url(../img/logo-3.jpg);
+        background-color: #e5e5e5;
       }
     }
     &:last-of-type {
       background-image: url(../img/logo-4-mono.jpg);
+      background-color: #e5e5e5;
       &:hover {
         background-image: url(../img/logo-4.jpg);
+        background-color: #e5e5e5;
       }
     }
   }
@@ -855,6 +877,7 @@ input[value='product-3']:checked {
 
     margin-bottom: 81px;
     display: inline-block;
+    vertical-align: middle;
 
     &:hover {
       background-color: #f0c52e;
@@ -914,6 +937,7 @@ input[value='product-3']:checked {
     width: 560px;
     height: 220px;
     display: inline-block;
+    vertical-align: middle;
     margin-top: 8px;
     margin-bottom: 72px;
   }
@@ -932,52 +956,11 @@ input[value='product-3']:checked {
     @include pseudo(80px, 7px);
     background-color: $main-color;
     bottom: 86px;
-    left: 131px;
+    left: 132px;
   }
 
   .container {
     @include flex;
-  }
-  a {
-    color: white;
-  }
-
-  div div:last-of-type {
-    text-align: right;
-  }
-
-  .logo {
-    margin-bottom: 13px;
-    top: 3px;
-    margin: 0;
-    color: $main-color;
-
-    &:hover {
-      color: #f0c52e;
-    }
-
-    &:active {
-      color: #796c3f;
-    }
-  }
-  .main-nav__items {
-    width: auto;
-    margin-bottom: 63px;
-    margin-top: 77px;
-    margin-left: 127px;
-
-    li:not(:last-of-type) {
-      margin-right: 40px;
-    }
-
-    li {
-      &:hover {
-        opacity: 0.6;
-      }
-      &:active {
-        opacity: 0.302;
-      }
-    }
   }
 
   .address {
@@ -985,80 +968,6 @@ input[value='product-3']:checked {
       font-family: 'Open Sans', sans-serif;
       font-weight: 300;
     }
-
-  .user-nav {
-
-    &__items {
-    width: auto;
-    margin-bottom: 37px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-
-      a {
-        color: rgba(255,255,255,0.702);
-      }
-
-      li:not(:last-of-type) {
-        margin-right: 35px;
-      }
-    }
-
-    &__sign-in {
-
-      &:hover {
-        opacity: 1;
-        a {
-          color: white;
-          &::before {
-            @include sprite2(-146px, -53px);
-
-          }
-        }
-      }
-
-      a::before {
-        @include sprite(-76px, -91px);
-        top: 4px;
-      }
-    }
-    &__compare {
-
-      &:hover {
-        opacity: 1;
-        a {
-          color: white;
-          &::before {
-            @include sprite2(-48px, -4px);
-
-          }
-        }
-      }
-
-      a::before {
-        @include sprite(-68px, -4px);
-        left: -1px;
-        top: 5px;
-      }
-    }
-    &__backet {
-
-      &:hover {
-        opacity: 1;
-        a {
-          color: white;
-          &::before {
-            @include sprite2(-2px, -2px);
-            top: 1px;
-          }
-        }
-      }
-
-      a::before {
-        @include sprite(-24px, -2px);
-        top: 1px;
-      }
-    }
-  }
 
   .phone-number {
     margin-bottom: 63px;
@@ -1073,12 +982,136 @@ input[value='product-3']:checked {
     }
   }
 }
+
+.container--footer {
+  div:last-of-type {
+    text-align: right;
+  }
+  div:nth-child(2) {
+    margin-left: 117px;
+  }
+}
+
+.logo--footer {
+  margin-bottom: 13px;
+  top: 3px;
+  left: -2px;
+  margin: 0;
+  color: $main-color;
+
+  &:hover {
+    color: #f0c52e;
+  }
+
+  &:active {
+    color: #796c3f;
+  }
+}
+
+.main-nav__items--footer {
+  width: auto;
+  margin-bottom: 63px;
+  margin-top: 77px;
+  margin-left: 10px;
+
+  a{
+    color: white;
+  }
+
+  li:not(:last-of-type) {
+    margin-right: 40px;
+  }
+
+  li {
+    &:hover {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 0.302;
+    }
+  }
+}
+
+.user-nav {
+
+  &__items--footer {
+    width: auto;
+    margin-bottom: 37px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+    a {
+      color: rgba(255,255,255,0.702);
+    }
+
+    li:not(:last-of-type) {
+      margin-right: 35px;
+    }
+  }
+
+  &__sign-in--footer {
+
+    &:hover {
+      opacity: 1;
+      a {
+        color: white;
+        &::before {
+          @include sprite2(-146px, -53px);
+
+        }
+      }
+    }
+
+    a::before {
+      @include sprite(-76px, -91px);
+      top: 4px;
+    }
+  }
+  &__compare--footer {
+
+    &:hover {
+      opacity: 1;
+      a {
+        color: white;
+        &::before {
+          @include sprite2(-48px, -4px);
+
+        }
+      }
+    }
+
+    a::before {
+      @include sprite(-68px, -4px);
+      left: -1px;
+      top: 5px;
+    }
+  }
+  &__backet--footer {
+
+    &:hover {
+      opacity: 1;
+      a {
+        color: white;
+        &::before {
+          @include sprite2(-2px, -2px);
+          top: 1px;
+        }
+      }
+    }
+
+    a::before {
+      @include sprite(-24px, -2px);
+      top: 1px;
+    }
+  }
+}
+
 .social {
   list-style-type: none;
   padding: 0;
   margin: 0;
   @include flex(center);
-  margin-left: 114px;
+  margin-left: 0px;
 
   &__btn {
     margin-left: 15px;
@@ -1125,7 +1158,7 @@ input[value='product-3']:checked {
     margin-left: 60px;
     letter-spacing: 0.5px;
   }
-  footer .logo {
+  .logo--footer {
     top: -2px;
   }
   .logo {
@@ -1180,11 +1213,13 @@ input[value='product-3']:checked {
 
 .wrapper {
   background-image: linear-gradient(to right,#dcdcdc 32.33%,#ebebeb 32.33%);
+  background-color: #e5e5e5;
   .container {
     @include flex(inherit);
   }
   &--catalog {
     background-image: linear-gradient(to right,#efefef 32.33%,#ffffff 32.33%);
+    background-color: #e5e5e5;
   }
 }
 
@@ -1222,6 +1257,7 @@ input[value='product-3']:checked {
     }
 
     p {
+      margin: 0;
       font-size: 18px;
       font-weight: bold;
       padding-top: 10px;
@@ -1353,29 +1389,6 @@ input[value='product-3']:checked {
     display: none;
   }
 
-  label {
-    position: relative;
-    padding-left: 40px;
-    margin-top: -3px;
-    margin-bottom: 13px;
-    letter-spacing: -0.6px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-
-    &:last-of-type {
-      margin-bottom: 7px;
-    }
-
-    &:hover .indicator-checkbox {
-      background-color: #cecece;
-    }
-
-    &:active .indicator-checkbox {
-      background-color: #c4c4c4;
-    }
-  }
-
   .indicator-checkbox {
     width: 23px;
     height: 23px;
@@ -1406,28 +1419,32 @@ input[value='product-3']:checked {
   }
 }
 
+.color {
+  position: relative;
+  padding-left: 40px;
+  margin-top: -3px;
+  margin-bottom: 13px;
+  letter-spacing: -0.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+
+  &:last-of-type {
+    margin-bottom: 7px;
+  }
+
+  &:hover .indicator-checkbox {
+    background-color: #cecece;
+  }
+
+  &:active .indicator-checkbox {
+    background-color: #c4c4c4;
+  }
+}
+
 .bluetooth {
   input {
     display: none;
-  }
-
-  label {
-    position: relative;
-    padding-left: 40px;
-    margin-top: -3px;
-    margin-bottom: 13px;
-    letter-spacing: -0.6px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-
-    &:hover .indicator-radio {
-      box-shadow: inset 0 0 0 2px rgb(188, 188, 188);
-    }
-
-    &:active .indicator-radio{
-      box-shadow: inset 0 0 0 2px rgb(172, 172, 172);
-
-    }
   }
 
   .indicator-radio {
@@ -1450,6 +1467,25 @@ input[value='product-3']:checked {
       box-shadow: inset 0 0 0 2px black;
       border-radius: 50%;
     }
+  }
+}
+
+.bluetooth-label {
+  position: relative;
+  padding-left: 40px;
+  margin-top: -3px;
+  margin-bottom: 13px;
+  letter-spacing: -0.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+
+  &:hover .indicator-radio {
+    box-shadow: inset 0 0 0 2px rgb(188, 188, 188);
+  }
+
+  &:active .indicator-radio{
+    box-shadow: inset 0 0 0 2px rgb(172, 172, 172);
+
   }
 }
 
@@ -1776,10 +1812,12 @@ input[value='product-3']:checked {
 
   &__email {
     display: inline-block;
+    vertical-align: middle;
   }
 
   &__name {
     display: inline-block;
+    vertical-align: middle;
     margin-right: 36px;
   }
 
