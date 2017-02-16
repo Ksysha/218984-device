@@ -162,8 +162,8 @@ button:focus {
 
 .user-nav {
   @include flex;
-  margin-top: -2px;
-  margin-bottom: 34px;
+  margin-top: -4px;
+  margin-bottom: 36px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 
@@ -199,7 +199,7 @@ button:focus {
     a::before {
       @include pseudo(15px, 15px);
       @include sprite(-53px, -91px);
-      top: 2px;
+      top: 4px;
       left: -1px;
     }
   }
@@ -213,7 +213,7 @@ button:focus {
     a::before {
       @include pseudo(15px, 15px);
       @include sprite(-48px, -4px);
-      top: 3px;
+      top: 5px;
       left: 3px;
     }
   }
@@ -227,7 +227,7 @@ button:focus {
     a::before {
       @include pseudo(15px, 15px);
       @include sprite(-4px, -4px);
-      top: 1px;
+      top: 3px;
       left: 0;
     }
   }
@@ -309,8 +309,8 @@ button:focus {
   &::before {
     @include pseudo(17px, 17px);
     @include sprite(-98px, -52px);
-    top: 8px;
-    left: 4px;
+    top: 10px;
+    left: 3px;
   }
 
   ::-webkit-input-placeholder {
@@ -437,9 +437,9 @@ button:focus {
   background: url(../img/slider-1.png) no-repeat;
   background-position-x: 90px;
   text-align: right;
-  min-height: 486px;
+  min-height: 496px;
   margin-top: -110px;
-  margin-bottom: 105px;
+  margin-bottom: 95px;
   z-index: 11;
 }
 .slide {
@@ -472,7 +472,8 @@ button:focus {
     line-height: 133px;
     font-weight: bold;
     position: absolute;
-    right: -11px;
+    right: -15px;
+    letter-spacing: 3.5px;
     top: 8px;
     color: white;
     z-index: -1;
@@ -535,7 +536,7 @@ button:focus {
 
 .slider__controls {
   position: absolute;
-  bottom: 129px;
+  bottom: 139px;
   right: 61px;
   display: flex;
   margin: 0;
@@ -566,12 +567,12 @@ button:focus {
   }
 }
 
-input[value='product-1']:checked {
+.product-1:checked {
   & ~ .slider {
     background: url(../img/slider-1.png) no-repeat;
     background-position-x: 90px;
 
-    label[for=product-1] {
+    .label-1 {
       box-shadow: inset 0 0 0 3px black;
     }
 
@@ -582,13 +583,13 @@ input[value='product-1']:checked {
   }
 }
 
-input[value='product-2']:checked {
+.product-2:checked {
   & ~ .slider {
     background: url(../img/slider-2.png) no-repeat;
     background-position-x: 116px;
     background-position-y: 11px;
 
-    label[for=product-2] {
+    .label-2 {
       box-shadow: inset 0 0 0 3px black;
     }
 
@@ -599,13 +600,13 @@ input[value='product-2']:checked {
   }
 }
 
-input[value='product-3']:checked {
+.product-3:checked {
   & ~ .slider {
     background: url(../img/slider-3.png) no-repeat;
     background-position-x: 31px;
     background-position-y: 64px;
 
-    label[for=product-3] {
+    .label-3 {
       box-shadow: inset 0 0 0 3px black;
     }
 
@@ -622,7 +623,7 @@ input[value='product-3']:checked {
 
 .popular {
   @include flex;
-  margin-bottom: 188px;
+  margin-bottom: 187px;
 
   span {
     font-weight: bold;
@@ -635,7 +636,7 @@ input[value='product-3']:checked {
 
   &__item {
     div {
-      margin-bottom: 34px;
+      margin-bottom: 35px;
       width: 160px;
       height: 160px;
       background-color: rgba(240, 197, 46, 0.502);
@@ -661,6 +662,11 @@ input[value='product-3']:checked {
   }
 }
 
+
+.special-position img {
+  margin-bottom: 0;
+}
+
 .services-wrapper {
   min-height: 288px;
   background-color: $grey;
@@ -676,7 +682,7 @@ input[value='product-3']:checked {
     @include pseudo(7px, 319px);
     background-color: black;
     z-index: 3;
-    left: 278px;
+    left: 277px;
     top: -80px;
   }
 
@@ -699,17 +705,6 @@ input[value='product-3']:checked {
       top: 15px;
       left: 0;
     }
-    letter-spacing: 4px;
-    font-weight: bold;
-    display: block;
-    box-sizing: border-box;
-    padding-left: 22px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    color: black;
-    cursor: pointer;
-    width: 280px;
-    margin-bottom: 25px;
   }
 
   &__description {
@@ -777,6 +772,21 @@ input[value='product-3']:checked {
 .service {
   display: none;
 
+  &-label {
+
+    letter-spacing: 4px;
+    font-weight: bold;
+    display: block;
+    box-sizing: border-box;
+    padding-left: 22px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: black;
+    cursor: pointer;
+    width: 280px;
+    margin-bottom: 25px;
+  }
+
   &:checked + label {
     color: $main-color;
     background: black;
@@ -791,6 +801,27 @@ input[value='product-3']:checked {
 .services2:checked ~ .services__content2,
 .services3:checked ~ .services__content3 {
   display: block;
+}
+
+.service-label {
+  &:hover {
+    width: 160px;
+    background-color: #f0c52e;
+    color: black;
+  }
+  &:active {
+    width: 280px;
+    background-color: black;
+    color: #f7e184;
+  }
+
+  &--2 {
+    padding-left: 27px;
+  }
+
+  &--3 {
+    padding-left: 41px;
+  }
 }
 
 .brands {
@@ -853,7 +884,7 @@ input[value='product-3']:checked {
       @include pseudo(80px, 7px);
       background-color: black;
       top: -54px;
-      left: 1px;
+      left: 0px;
 
     }
   }
@@ -875,7 +906,7 @@ input[value='product-3']:checked {
       top: 16px;
     }
 
-    margin-bottom: 81px;
+    margin-bottom: 79px;
     display: inline-block;
     vertical-align: middle;
 
@@ -895,7 +926,7 @@ input[value='product-3']:checked {
   padding: 0;
   margin: 0;
   font-weight: bold;
-  margin-top: 70px;
+  margin-top: 72px;
   margin-bottom: 60px;
   letter-spacing: 0.7px;
 
@@ -938,7 +969,7 @@ input[value='product-3']:checked {
     height: 220px;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: 72px;
   }
   .btn {
@@ -952,13 +983,6 @@ input[value='product-3']:checked {
   color: white;
   position: relative;
 
-  &:after {
-    @include pseudo(80px, 7px);
-    background-color: $main-color;
-    bottom: 86px;
-    left: 132px;
-  }
-
   .container {
     @include flex;
   }
@@ -970,6 +994,7 @@ input[value='product-3']:checked {
     }
 
   .phone-number {
+    width: auto;
     margin-bottom: 63px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -984,18 +1009,31 @@ input[value='product-3']:checked {
 }
 
 .container--footer {
-  div:last-of-type {
-    text-align: right;
+  > div:first-of-type {
+    width: 360px;
+    box-sizing: border-box;
+
+    &:after {
+      @include pseudo(80px, 7px);
+      background-color: $main-color;
+      bottom: 86px;
+      left: 132px;
+    }
   }
-  div:nth-child(2) {
-    margin-left: 117px;
+  > div:last-of-type {
+    text-align: right;
+    width: 360px;
+    box-sizing: border-box;
+  }
+  > div:nth-child(2) {
+    width: 440px;
   }
 }
 
 .logo--footer {
   margin-bottom: 13px;
   top: 3px;
-  left: -2px;
+  left: -3px;
   margin: 0;
   color: $main-color;
 
@@ -1012,14 +1050,17 @@ input[value='product-3']:checked {
   width: auto;
   margin-bottom: 63px;
   margin-top: 77px;
-  margin-left: 10px;
 
   a{
     color: white;
   }
 
   li:not(:last-of-type) {
-    margin-right: 40px;
+    margin-right: 39px;
+    margin-left: 7px;
+  }
+  li:nth-child(2) {
+    margin-left: -4px;
   }
 
   li {
@@ -1045,7 +1086,7 @@ input[value='product-3']:checked {
     }
 
     li:not(:last-of-type) {
-      margin-right: 35px;
+      margin-right: 40px;
     }
   }
 
@@ -1082,7 +1123,7 @@ input[value='product-3']:checked {
 
     a::before {
       @include sprite(-68px, -4px);
-      left: -1px;
+      left: 4px;
       top: 5px;
     }
   }
@@ -1158,12 +1199,15 @@ input[value='product-3']:checked {
     margin-left: 60px;
     letter-spacing: 0.5px;
   }
+  .logo {
+    left: -1px;
+    top: -16px;
+  }
   .logo--footer {
     top: -2px;
+    left: -4px;
   }
-  .logo {
-    left: 0;
-  }
+
 }
 
 
@@ -1250,6 +1294,10 @@ input[value='product-3']:checked {
     position: relative;
     margin-bottom: 29px;
 
+    &:nth-child(1) {
+      margin-bottom: 22px;
+    }
+
     &::before {
       @include pseudo(99.9%, 2px);
       background-color: black;
@@ -1275,6 +1323,7 @@ input[value='product-3']:checked {
 
   .btn {
     @include button;
+    padding-right: 37px;
     border: none;
     background-color: #eeeeee;
     z-index: 1;
@@ -1286,7 +1335,7 @@ input[value='product-3']:checked {
     }
 
     &::before {
-      @include pseudo-button(200px);
+      @include pseudo-button(198px);
       left: 0px;
       top: 15px;
     }
@@ -1374,6 +1423,7 @@ input[value='product-3']:checked {
     line-height: 22px;
     color: #bfbfbf;
     position: relative;
+    top: -8px;
   }
 
   .max-price {
@@ -1405,15 +1455,15 @@ input[value='product-3']:checked {
       @include pseudo(10px, 2px);
       top: 10px;
       left: 9px;
-      transform: rotate(-38deg);
+      transform: rotate(-45deg);
       background-color: black;
     }
 
     & + .indicator-checkbox::after {
       @include pseudo(6px, 2px);
-      top: 10px;
-      left: 5px;
-      transform: rotate(42deg);
+      top: 11px;
+      left: 6px;
+      transform: rotate(45deg);
       background-color: black;
     }
   }
@@ -1493,9 +1543,10 @@ input[value='product-3']:checked {
   @include flex;
   flex-wrap: wrap;
   padding-left: 72px;
-  margin-top: 70px;
+  padding-top: 69px;
   width: 71.8%;
   box-sizing: border-box;
+  background-color: white;
 }
 .product-card {
   margin-bottom: 51px;
@@ -1513,10 +1564,36 @@ input[value='product-3']:checked {
     border-radius: 50%;
     content: 'NEW';
     top: 29px;
-    right: 26px;
+    right: 28px;
     color: #d7d7d7;
-    padding: 15px 13px;
+    padding: 15px 14px;
     display: none;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__main {
+    position: relative;
+
+    &::before {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      content: '';
+      background: rgba(238,238,238,.702);
+    }
+
+    &:hover {
+      &::before {
+        display: block;
+      }
+      .product-card__buy {
+        display: block;
+      }
+    }
   }
 
   &__content {
@@ -1528,10 +1605,13 @@ input[value='product-3']:checked {
     line-height: 20px;
     margin: 0;
     width: 260px;
+    letter-spacing: 0.3px;
   }
   &__price {
     font-size: 16px;
     line-height: 16px;
+    margin-top: 4px;
+    margin-right: 3px;
   }
 
   &__buy {
@@ -1591,26 +1671,6 @@ input[value='product-3']:checked {
       color: rgba(0, 0, 0, 0.2);
     }
   }
-
-  &::before {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 74px;
-    left: 0;
-    content: '';
-    background: rgba(238,238,238,.702);
-  }
-
-  &:hover {
-    &::before {
-      display: block;
-    }
-    .product-card__buy {
-      display: block;
-    }
-  }
 }
 .sort {
   position: relative;
@@ -1634,10 +1694,11 @@ input[value='product-3']:checked {
     }
 
     a {
-      margin-right: 27px;
+      margin-right: 30px;
       color: rgba(0, 0, 0, 0.302);
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
+      letter-spacing: -0.6px;
 
       &:hover:not(.active) {
         color: rgba(0, 0, 0, 0.6);
@@ -1652,7 +1713,7 @@ input[value='product-3']:checked {
     font-weight: bold;
     margin: 0;
     letter-spacing: 3.6px;
-    margin-right: 41px;
+    margin-right: 42px;
   }
 
   &__up {
@@ -1730,14 +1791,10 @@ input[value='product-3']:checked {
   padding: 27px 0px;
   background-color: #ebebeb;
   width: 760px;
-  margin-bottom: 73px;
+  margin-bottom: 74px;
   margin-top: -10px;
 
-  a {
-    color: black;
-    //
-  }
-  a:not(.page-control__prev):not(.page-control__next):not(.current) {
+  &__btn {
     color: rgba(0, 0, 0, 0.302);
   }
 
@@ -1764,6 +1821,10 @@ input[value='product-3']:checked {
     }
   }
 
+  .current {
+    color: black;
+  }
+
   &__next {
     margin-left: 175px;
     padding-top: 25px;
@@ -1778,6 +1839,15 @@ input[value='product-3']:checked {
     &:active {
       background-color: #d9d9d9;
       color: #979797;
+    }
+  }
+
+  &__btn:not(.current) {
+    &:hover {
+      color: #666666;
+    }
+    &:active {
+      color: black;
     }
   }
 }
@@ -1795,7 +1865,7 @@ input[value='product-3']:checked {
   font-size: 18px;
   line-height: 18px;
   font-weight: bold;
-  position: absolute;
+  position: fixed;
   z-index: 20;
   top: 50%;
   left: 50%;
@@ -1979,4 +2049,23 @@ input[value='product-3']:checked {
 
 .feedback-error {
   background-color: #f6dada;
+}
+
+.htmlacademy-logo {
+  width: 27px;
+  height: 34px;
+  background-image: url(../img/htmlacademy-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  //background-color: $main-color;
+  display: inline-block;
+
+  &:hover {
+    background-image: url(../img/htmlacademy-logo-2.png);
+  }
+
+  &:active {
+    background-image: url(../img/htmlacademy-logo.png);
+    opacity: 0.302;
+  }
 }
