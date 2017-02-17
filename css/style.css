@@ -74,9 +74,9 @@ button:focus {
     list-style-type: none;
     padding: 0;
     margin: 0; }
-    .user-nav__items li:hover {
+    .user-nav__items li:not(.sign-out):hover {
       opacity: 0.6; }
-    .user-nav__items li:active {
+    .user-nav__items li:not(.sign-out):active {
       opacity: 0.302; }
   .user-nav__sign-in {
     flex-grow: 2; }
@@ -124,6 +124,35 @@ button:focus {
     background-position: -4px -4px;
     top: 3px;
     left: 0; }
+
+.sign-out__name {
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  padding-left: 24px;
+  letter-spacing: 0.3px; }
+  .sign-out__name::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: -53px -91px;
+    top: 4px;
+    left: -1px; }
+  .sign-out__name:hover {
+    opacity: 0.6; }
+  .sign-out__name:active {
+    opacity: 0.302; }
+.sign-out__btn {
+  margin-left: 15px;
+  margin-right: 60px;
+  color: rgba(0, 0, 0, 0.302); }
+  .sign-out__btn:hover {
+    color: rgba(0, 0, 0, 0.6); }
+  .sign-out__btn:active {
+    color: black; }
 
 .search-form {
   position: relative; }
@@ -591,7 +620,8 @@ button:focus {
     margin-bottom: 25px; }
   .service:checked + label {
     color: #f7e296;
-    background: black; }
+    background: black;
+    width: 280px; }
     .service:checked + label:after {
       background-color: black; }
 
@@ -777,7 +807,8 @@ button:focus {
 
 .container--footer > div:first-of-type {
   width: 360px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative; }
   .container--footer > div:first-of-type:after {
     content: "";
     display: block;
@@ -785,8 +816,8 @@ button:focus {
     width: 80px;
     height: 7px;
     background-color: #f7e296;
-    bottom: 86px;
-    left: 132px; }
+    bottom: 23px;
+    left: 0px; }
 .container--footer > div:last-of-type {
   text-align: right;
   width: 360px;
@@ -1027,7 +1058,7 @@ button:focus {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    padding-right: 37px;
+    padding-right: 39px;
     border: none;
     background-color: #eeeeee;
     z-index: 1;
@@ -1209,9 +1240,10 @@ button:focus {
     box-shadow: inset 0 0 0 2px #d7d7d7;
     border-radius: 50%;
     content: 'NEW';
-    top: 29px;
-    right: 28px;
+    top: 30px;
+    right: 27px;
     color: #d7d7d7;
+    letter-spacing: 0.5px;
     padding: 15px 14px;
     display: none;
     font-size: 14px;
@@ -1448,6 +1480,7 @@ button:focus {
   background-color: #f2f2f2; }
 
 .feedback-form {
+  box-shadow: 0 5px 41px rgba(0, 0, 0, 0.25), 0 11px 32px rgba(0, 0, 0, 0.22);
   font-size: 18px;
   line-height: 18px;
   font-weight: bold;
