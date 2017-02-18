@@ -816,7 +816,7 @@ button:focus {
     width: 80px;
     height: 7px;
     background-color: #f7e296;
-    bottom: 23px;
+    bottom: 17px;
     left: 0px; }
 .container--footer > div:last-of-type {
   text-align: right;
@@ -839,7 +839,8 @@ button:focus {
 .main-nav__items--footer {
   width: auto;
   margin-bottom: 63px;
-  margin-top: 77px; }
+  margin-top: 77px;
+  flex-wrap: nowrap; }
   .main-nav__items--footer a {
     color: white; }
   .main-nav__items--footer li:not(:last-of-type) {
@@ -1058,7 +1059,7 @@ button:focus {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    padding-right: 39px;
+    padding-right: 40px;
     border: none;
     background-color: #eeeeee;
     z-index: 1;
@@ -1640,7 +1641,8 @@ button:focus {
   background-image: url(../img/htmlacademy-logo.png);
   background-repeat: no-repeat;
   background-position: center;
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: top; }
   .htmlacademy-logo:hover {
     background-image: url(../img/htmlacademy-logo-2.png); }
   .htmlacademy-logo:active {
