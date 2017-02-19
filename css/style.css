@@ -479,22 +479,24 @@ button:focus {
     width: 125px;
     display: inline-block;
     vertical-align: top; }
-  .popular__item div {
-    margin-bottom: 35px;
-    width: 160px;
-    height: 160px;
-    background-color: rgba(240, 197, 46, 0.502);
-    text-align: center;
+  .popular__item {
     display: flex;
     flex-direction: column; }
-  .popular__item img {
-    margin: auto; }
-  .popular__item:hover div {
-    background-color: #f0c52e; }
-  .popular__item:active img {
-    opacity: 0.302; }
-  .popular__item:active span {
-    opacity: 0.302; }
+    .popular__item div {
+      margin-bottom: 35px;
+      width: 160px;
+      height: 160px;
+      background-color: rgba(240, 197, 46, 0.502);
+      text-align: center;
+      display: flex; }
+    .popular__item img {
+      margin: auto; }
+    .popular__item:hover div {
+      background-color: #f0c52e; }
+    .popular__item:active img {
+      opacity: 0.302; }
+    .popular__item:active span {
+      opacity: 0.302; }
 
 .special-position img {
   margin-bottom: 0; }

@@ -667,6 +667,8 @@ button:focus {
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
     div {
       margin-bottom: 35px;
       width: 160px;
@@ -674,7 +676,6 @@ button:focus {
       background-color: rgba(240, 197, 46, 0.502);
       text-align: center;
       display: flex;
-      flex-direction: column;
     }
 
     img {
