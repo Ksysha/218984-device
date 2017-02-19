@@ -47,6 +47,9 @@ $footer-color: #464646;
   background-repeat: no-repeat;
   background-position: center center;
   text-indent: -100000px;
+  font-size: 0;
+  display: block;
+  line-height: 0;
 }
 
 @mixin button {
@@ -119,17 +122,6 @@ body
   font-weight: normal;
   color: black;
   min-width: 1200px
-}
-
-h1 {
-  font-size: 47px;
-  line-height: 55px;
-  margin: 0;
-}
-
-h2 {
-  font-size: 16px;
-  line-height: 16px;
 }
 
 a {
@@ -516,7 +508,10 @@ button:focus {
     z-index: -1;
   }
   &__title {
-    //margin-right: 101px;
+    font-size: 47px;
+    line-height: 55px;
+
+    margin: 0;
     margin-top: 80px;
     margin-right: -1px;
     letter-spacing: 0.7px;
@@ -679,6 +674,7 @@ button:focus {
       background-color: rgba(240, 197, 46, 0.502);
       text-align: center;
       display: flex;
+      flex-direction: column;
     }
 
     img {
@@ -868,6 +864,8 @@ button:focus {
 
   &__item {
     text-indent: -100000px;
+    font-size: 0;
+    line-height: 0;
     display: inline-block;
     vertical-align: middle;
     width: 260px;
@@ -994,6 +992,7 @@ button:focus {
 .info {
   margin-right: 30px;
   padding-right: 93px;
+  width: 570px;
 
   .btn {
     padding-left: 21px;
@@ -1002,6 +1001,7 @@ button:focus {
 }
 
 .contacts {
+  width: 560px;
   .map {
     width: 560px;
     height: 220px;
@@ -1205,6 +1205,7 @@ button:focus {
     }
     a {
       font-size: 0;
+      display: block;
       line-height: 0;
       text-indent: -999999px;
       opacity: 0.302;
@@ -1235,6 +1236,10 @@ button:focus {
 
 .inner {
   h1 {
+    font-size: 47px;
+    line-height: 55px;
+
+    margin: 0;
     margin-top: 34px;
     margin-left: 60px;
     letter-spacing: 0.5px;
@@ -1317,6 +1322,8 @@ button:focus {
 
   &__title {
     @include upper_font(16px);
+    font-size: 16px;
+    line-height: 16px;
     font-weight: bold;
     margin: 0;
     padding-top: 27px;
@@ -1653,6 +1660,7 @@ button:focus {
     line-height: 16px;
     margin-top: 4px;
     margin-right: 3px;
+    overflow: hidden;
   }
 
   &__buy {
@@ -1751,6 +1759,8 @@ button:focus {
   }
   &__title {
     @include upper_font(16px);
+    font-size: 16px;
+    line-height: 16px;
     font-weight: bold;
     margin: 0;
     letter-spacing: 3.6px;
@@ -1759,6 +1769,9 @@ button:focus {
 
   &__up {
     text-indent: -10000px;
+    font-size: 0;
+    display: block;
+    line-height: 0;
     position: relative;
     width: 20px;
     height: 20px;
@@ -1793,6 +1806,9 @@ button:focus {
 
   &__down {
     text-indent: -10000px;
+    font-size: 0;
+    display: block;
+    line-height: 0;
     position: relative;
     width: 20px;
     height: 20px;
@@ -2037,6 +2053,9 @@ button:focus {
     vertical-align: middle;
     text-decoration: none;
     text-indent: -99999px;
+    font-size: 0;
+    display: block;
+    line-height: 0;
 
     &:focus {
       outline: none;
